@@ -1,7 +1,385 @@
+"use client";
+
+import React, { useState } from "react";
+import BookingModal from "./components/BookingModal";
+import FaqSection from "./components/FaqSection";
+
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
-    <main className="min-h-screen bg-white">
-      {/* Empty landing page */}
+    <main className="min-h-screen bg-[#fcfbf9] text-stone-900 font-sans selection:bg-terracotta-100 selection:text-terracotta-900">
+      
+      {/* Header */}
+      <header className="sticky top-0 z-40 bg-[#fcfbf9]/85 backdrop-blur-md border-b border-stone-200/40 transition-all">
+        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+          <div className="flex flex-col">
+            <span className="font-serif text-lg md:text-xl font-bold tracking-wide text-stone-800">
+              PENEDÈS <span className="text-terracotta-600">WINE TOURS</span>
+            </span>
+            <span className="text-[10px] tracking-widest uppercase text-stone-500 font-semibold -mt-1">
+              Sitges Departures
+            </span>
+          </div>
+
+          <nav className="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide text-stone-600">
+            <a href="#itinerary" className="hover:text-terracotta-600 transition-colors">The Itinerary</a>
+            <a href="#culinary" className="hover:text-terracotta-600 transition-colors">Culinary Promise</a>
+            <a href="#faq" className="hover:text-terracotta-600 transition-colors">Logistics & FAQ</a>
+          </nav>
+
+          <div>
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="px-5 py-2.5 bg-stone-900 hover:bg-stone-800 text-white font-medium text-xs tracking-wider uppercase rounded-full shadow-sm hover:shadow-md transition-all cursor-pointer"
+            >
+              Book Your Escape
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="relative overflow-hidden pt-12 pb-24 md:py-32">
+        {/* Subtle romantic background gradient shape */}
+        <div className="absolute top-0 right-0 -z-10 w-[70%] h-[80%] bg-gradient-to-bl from-terracotta-50/40 via-gold-50/20 to-transparent rounded-bl-[100px]" />
+        
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          {/* Hero Copy */}
+          <div className="lg:col-span-7 space-y-6 text-left">
+            <div className="inline-flex items-center space-x-2 bg-gold-100/60 border border-gold-400/20 px-3.5 py-1.5 rounded-full text-xs font-semibold text-gold-700 tracking-wider uppercase">
+              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span>Door-to-door Sitges Pickup & Return</span>
+            </div>
+
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif text-stone-900 leading-[1.15] tracking-tight">
+              Bespoke Winery Escapes <br className="hidden md:block"/>
+              <span className="text-terracotta-600 italic font-medium">Directly From Your Sitges Villa</span>
+            </h1>
+
+            <p className="text-stone-600 text-lg md:text-xl font-normal leading-relaxed max-w-2xl">
+              Escape to the rolling Catalan vineyards of Penedès. Sip premium Cava and aged organic wines at 3 hand-selected boutique cellars, followed by a romantic tasting board curated by a former celebrity private chef. All in just half a day.
+            </p>
+
+            {/* Micro value statements */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-2 border-y border-stone-200/50">
+              <div className="flex items-center space-x-2.5">
+                <span className="text-terracotta-500 font-bold text-lg">4.5h</span>
+                <span className="text-stone-600 text-sm leading-tight">Fits perfectly into your holiday schedule</span>
+              </div>
+              <div className="flex items-center space-x-2.5">
+                <span className="text-terracotta-500 font-bold text-lg">VIP</span>
+                <span className="text-stone-600 text-sm leading-tight">Private guide & small groups (2-8)</span>
+              </div>
+              <div className="flex items-center space-x-2.5">
+                <span className="text-terracotta-500 font-bold text-lg">Chef</span>
+                <span className="text-stone-600 text-sm leading-tight">Premium local artisan culinary pairings</span>
+              </div>
+            </div>
+
+            <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="px-8 py-4 bg-terracotta-600 hover:bg-terracotta-700 text-white font-semibold text-sm tracking-wider uppercase rounded-lg shadow-lg hover:shadow-xl transition-all text-center cursor-pointer"
+              >
+                Book Your Tour Now
+              </button>
+              <a
+                href="#itinerary"
+                className="px-8 py-4 border border-stone-300 hover:bg-stone-100 text-stone-700 font-semibold text-sm tracking-wider uppercase rounded-lg transition-all text-center"
+              >
+                View Itinerary
+              </a>
+            </div>
+
+            <p className="text-stone-500 text-xs italic">
+              * Fully customizable for private groups. High dietary requirements accommodated with elegance.
+            </p>
+          </div>
+
+          {/* Hero Image / Visual Representation */}
+          <div className="lg:col-span-5 relative">
+            <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-stone-200">
+              {/* Premium image asset */}
+              <img
+                src="/vineyard_hero.png"
+                alt="Bespoke Penedès Wine Tour experience from Sitges"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-stone-900/10 flex flex-col justify-end p-8 text-white">
+                <div className="mb-2 flex items-center space-x-1 text-gold-400">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="font-serif text-2xl mb-1">“The highlight of our stay in Sitges.”</p>
+                <p className="text-xs text-stone-300 uppercase tracking-widest font-semibold">
+                  — The Hamilton Family, London (Stayed at Villa La Marina)
+                </p>
+              </div>
+              
+              {/* Overlay graphics showcasing premium branding */}
+              <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-lg shadow-md border border-stone-200/50">
+                <p className="text-[10px] text-stone-500 uppercase tracking-wider font-bold">Next Available Tour</p>
+                <p className="text-sm font-serif font-bold text-vineyard-900">Tomorrow, 9:00 AM</p>
+              </div>
+            </div>
+            
+            {/* Visual background details */}
+            <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-gold-400/10 rounded-full blur-xl -z-10" />
+            <div className="absolute -top-6 -right-6 w-36 h-36 bg-terracotta-500/10 rounded-full blur-2xl -z-10" />
+          </div>
+        </div>
+      </section>
+
+      {/* Trust & Proof Banner */}
+      <section className="bg-stone-900 text-white py-12">
+        <div className="max-w-7xl mx-auto px-6">
+          <p className="text-center text-xs uppercase tracking-widest text-gold-400 font-bold mb-8">
+            As Recommended by Luxury Concierges in Sitges
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <div className="space-y-2 border-b md:border-b-0 md:border-r border-stone-800 pb-6 md:pb-0 md:pr-8 last:border-0">
+              <p className="font-serif text-stone-200 italic">"Our guests at the villa expect the absolute best. Penedès Wine Tours delivers a seamless, door-to-door experience that consistently wows them."</p>
+              <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider">— Elite Sitges Villa Rentals</p>
+            </div>
+            <div className="space-y-2 border-b md:border-b-0 md:border-r border-stone-800 pb-6 md:pb-0 md:pr-8 last:border-0">
+              <p className="font-serif text-stone-200 italic">"The half-day timeline is genius. Guests get to experience world-class vineyards, taste cava, and be back by the pool with a book by 2:00 PM."</p>
+              <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider">— Lead Concierge, Premium Sitges Hotel</p>
+            </div>
+            <div className="space-y-2 last:border-0">
+              <p className="font-serif text-stone-200 italic">"Every detail—from the Mercedes transport to the celebrity chef culinary pairings—is flawlessly premium. A must-do day trip."</p>
+              <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider">— Barcelona & Sitges Lifestyle Guide</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* The Itinerary Section */}
+      <section id="itinerary" className="py-24 bg-stone-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center max-w-2xl mx-auto mb-20">
+            <span className="text-terracotta-600 font-serif text-sm tracking-widest uppercase block mb-3">
+              Effortless Half-Day Flow
+            </span>
+            <h2 className="text-3xl md:text-5xl font-serif text-stone-900 leading-tight">
+              A Wine Tasting Day Trip Designed Around Your Holiday
+            </h2>
+            <p className="text-stone-600 mt-4 text-sm md:text-base leading-relaxed">
+              We know your holiday time is precious. That is why we curating our itinerary to fit perfectly into a morning or afternoon, leaving your beach days and dinner plans completely untouched.
+            </p>
+          </div>
+
+          {/* Timeline Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+            
+            {/* Step 1 */}
+            <div className="bg-white p-8 rounded-2xl border border-stone-200/50 shadow-sm space-y-4 hover:shadow-md transition-shadow relative">
+              <span className="absolute top-4 right-6 text-5xl font-serif font-bold text-stone-100">01</span>
+              <div className="w-10 h-10 bg-terracotta-50 text-terracotta-700 rounded-lg flex items-center justify-center">
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h3 className="font-serif text-xl text-stone-900">Door-to-Door Pickup</h3>
+              <p className="text-stone-600 text-sm leading-relaxed">
+                Step straight from your Sitges lobby into our air-conditioned Mercedes van. Choose between 9:00 AM or 2:00 PM departures to match your pace.
+              </p>
+            </div>
+
+            {/* Step 2 */}
+            <div className="bg-white p-8 rounded-2xl border border-stone-200/50 shadow-sm space-y-4 hover:shadow-md transition-shadow relative">
+              <span className="absolute top-4 right-6 text-5xl font-serif font-bold text-stone-100">02</span>
+              <div className="w-10 h-10 bg-vineyard-50 text-vineyard-800 rounded-lg flex items-center justify-center">
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-11.314l.707.707m11.314 11.314l.707-.707M12 5a7 7 0 100 14 7 7 0 000-14z" />
+                </svg>
+              </div>
+              <h3 className="font-serif text-xl text-stone-900">3 Boutique Wineries</h3>
+              <p className="text-stone-600 text-sm leading-relaxed">
+                VIP estate access in the Penedès & Cava region. Walk the beautiful vines and enjoy curated, guided tastings of organic white, red, and sparkling wines.
+              </p>
+            </div>
+
+            {/* Step 3 */}
+            <div className="bg-white p-8 rounded-2xl border border-stone-200/50 shadow-sm space-y-4 hover:shadow-md transition-shadow relative">
+              <span className="absolute top-4 right-6 text-5xl font-serif font-bold text-stone-100">03</span>
+              <div className="w-10 h-10 bg-gold-50 text-gold-700 rounded-lg flex items-center justify-center">
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              </div>
+              <h3 className="font-serif text-xl text-stone-900">Celebrity Chef Board</h3>
+              <p className="text-stone-600 text-sm leading-relaxed">
+                A custom-curated culinary highlight set in a romantic garden spot. Catalan charcuterie and cheeses prepared by a renowned former A-list private chef.
+              </p>
+            </div>
+
+            {/* Step 4 */}
+            <div className="bg-white p-8 rounded-2xl border border-stone-200/50 shadow-sm space-y-4 hover:shadow-md transition-shadow relative">
+              <span className="absolute top-4 right-6 text-5xl font-serif font-bold text-stone-100">04</span>
+              <div className="w-10 h-10 bg-stone-100 text-stone-700 rounded-lg flex items-center justify-center">
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+              </div>
+              <h3 className="font-serif text-xl text-stone-900">Return to Sitges</h3>
+              <p className="text-stone-600 text-sm leading-relaxed">
+                We return you safely to your villa or hotel door in time for the afternoon sun or a relaxing beach stroll before dinner. Zero stress.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* The Culinary Promise Section */}
+      <section id="culinary" className="py-24 bg-gradient-to-b from-[#fcfbf9] to-stone-50 border-t border-stone-200/40">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          
+          {/* Visual representations */}
+          <div className="lg:col-span-5 relative space-y-6">
+            <div className="relative aspect-video w-full rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-stone-200">
+              <img
+                src="/xarcuteria_board.png"
+                alt="Catalan Gourmet Xarcuteria Board"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </div>
+            <div className="relative aspect-video w-full rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-stone-200">
+              <img
+                src="/vegan_board.png"
+                alt="Plant-based vegan artisanal board"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          {/* Copy Description */}
+          <div className="lg:col-span-7 space-y-6">
+            <span className="text-terracotta-600 font-serif text-sm tracking-widest uppercase block">
+              Gourmet Vineyard Dining
+            </span>
+            <h2 className="text-3xl md:text-5xl font-serif text-stone-900 leading-tight">
+              The Celebrity-Chef Xarcuteria Experience
+            </h2>
+            <p className="text-stone-600 text-base md:text-lg leading-relaxed">
+              Set in a private, romantic pocket of the vineyard under centenary olive trees, you will dine on a custom-curated charcuterie board ("Xarcuteria"). This is exclusively prepared for our guests by a former A-list celebrity private chef.
+            </p>
+            <p className="text-stone-600 text-sm md:text-base leading-relaxed">
+              We source only the finest, award-winning acorn-fed Jamón Ibérico, artisan fuet, wild herb llonganissa, and small-batch Catalan cheeses aged in local cellars. Each bite is paired with the perfect wine from the estate.
+            </p>
+            
+            {/* Dietary notes calling out premium veg/vegan */}
+            <div className="p-5 bg-gold-50/60 border border-gold-400/20 rounded-xl space-y-3">
+              <div className="flex items-center space-x-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-gold-500" />
+                <h4 className="font-serif font-bold text-stone-900 text-sm">
+                  Gourmet Vegetarian & Vegan Curation
+                </h4>
+              </div>
+              <p className="text-stone-600 text-xs md:text-sm leading-relaxed">
+                Dietary requirements are never treated as an afterthought. Our chef custom-designs bespoke plates, featuring roasted local heritage vegetables, premium seed crackers, artisan plant-based cheeses, and house-cured green olives, ensuring every traveler dines in luxury.
+              </p>
+            </div>
+
+            <div className="pt-2">
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="px-6 py-3 bg-stone-900 hover:bg-stone-800 text-white font-semibold text-xs tracking-wider uppercase rounded-lg transition-all"
+              >
+                Inquire About Culinary Options
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* Accordion FAQ Section */}
+      <FaqSection />
+
+      {/* Final Call to Action */}
+      <section className="bg-gradient-to-r from-vineyard-900 to-stone-950 text-white py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(214,84,56,0.15),transparent)] pointer-events-none" />
+        <div className="max-w-4xl mx-auto px-6 text-center space-y-8 relative z-10">
+          <p className="text-gold-400 font-serif text-sm tracking-widest uppercase font-bold">
+            Limited Openings This Summer
+          </p>
+          <h2 className="text-4xl md:text-5xl font-serif leading-tight">
+            Ready to Escape Sitges for the Perfect Vineyard Afternoon?
+          </h2>
+          <p className="text-stone-300 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+            Reserve your date today. Spots are kept highly exclusive to maintain VIP estate access and premium comfort.
+          </p>
+          <div className="pt-4">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="px-8 py-4 bg-terracotta-600 hover:bg-terracotta-700 text-white font-semibold text-sm tracking-wider uppercase rounded-lg shadow-xl hover:shadow-2xl transition-all cursor-pointer"
+            >
+              Book Your Wine Tasting Day Trip
+            </button>
+          </div>
+          <p className="text-xs text-stone-400">
+            No upfront reservation fee required. Cancel or reschedule with 48h notice.
+          </p>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-stone-950 border-t border-stone-900 text-stone-500 py-16 text-sm">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+          
+          <div className="space-y-4">
+            <p className="font-serif text-white font-bold tracking-wide">
+              PENEDÈS <span className="text-terracotta-500">WINE TOURS</span>
+            </p>
+            <p className="text-xs leading-relaxed text-stone-400">
+              Curating exclusive, half-day tours from Sitges into the heart of the Penedès & Cava wine country. Premium local hosts, Mercedes-class pickup, and A-list chef dining.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-xs uppercase font-bold tracking-wider text-stone-300 mb-4">Quick Links</h4>
+            <ul className="space-y-2.5 text-xs text-stone-400">
+              <li><a href="#itinerary" className="hover:text-white transition-colors">The Itinerary</a></li>
+              <li><a href="#culinary" className="hover:text-white transition-colors">Culinary Promise</a></li>
+              <li><a href="#faq" className="hover:text-white transition-colors">Logistics & FAQ</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-xs uppercase font-bold tracking-wider text-stone-300 mb-4">Departures</h4>
+            <p className="text-xs leading-relaxed text-stone-400">
+              Door-to-door pickup & drop-off from any villa, hotel, or private accommodation in Sitges, Spain.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-xs uppercase font-bold tracking-wider text-stone-300 mb-4">Inquiries & Booking</h4>
+            <p className="text-xs text-stone-400 mb-2">Concierge Phone:</p>
+            <p className="text-sm font-semibold text-white mb-2">+34 93 811 00XX</p>
+            <p className="text-xs text-stone-400">Email: concierge@penedeswinetours.com</p>
+          </div>
+
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 pt-8 border-t border-stone-900 flex flex-col md:flex-row items-center justify-between text-xs text-stone-500">
+          <p>© {new Date().getFullYear()} Penedès Wine Tours. All rights reserved.</p>
+          <div className="flex space-x-6 mt-4 md:mt-0">
+            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+          </div>
+        </div>
+      </footer>
+
+      {/* Booking Inquiry Modal */}
+      <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </main>
   );
 }

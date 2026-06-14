@@ -1,19 +1,40 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fcfbf9; /* Exquisite Warm Alabaster/Sand */
+  --foreground: #1c1917; /* Deep Stone */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  
+  --font-sans: var(--font-outfit), sans-serif;
+  --font-serif: var(--font-playfair), Georgia, serif;
+  
+  /* Luxury Palette Extensions */
+  --color-terracotta-50: #fdf6f4;
+  --color-terracotta-100: #fbece7;
+  --color-terracotta-500: #d65438;
+  --color-terracotta-600: #c23e25;
+  --color-terracotta-700: #a1301b;
+  --color-terracotta-900: #6f2619;
+  
+  --color-gold-50: #fbfaf4;
+  --color-gold-100: #f5f2e0;
+  --color-gold-400: #c7b366;
+  --color-gold-500: #b59b48;
+  --color-gold-600: #9e8239;
+  --color-gold-700: #80652d;
+
+  --color-vineyard-50: #f4f6f4;
+  --color-vineyard-100: #e4ebe4;
+  --color-vineyard-800: #2b3e2b;
+  --color-vineyard-900: #1a2a1a;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
+
