@@ -270,7 +270,7 @@ export default function Home() {
               <div className="flex items-center space-x-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-gold-500" />
                 <h4 className="font-serif font-bold text-stone-900 text-sm">
-                  Gourmet Vegetarian & Vegan Curation
+                  Gourmet Vegetarian Option
                 </h4>
               </div>
               <p className="text-stone-600 text-xs md:text-sm leading-relaxed">
