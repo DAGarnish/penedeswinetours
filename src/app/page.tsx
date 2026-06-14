@@ -29,31 +29,25 @@ export default function Home() {
           </nav>
 
           <div>
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="px-5 py-2.5 bg-stone-900 hover:bg-stone-800 text-white font-medium text-xs tracking-wider uppercase rounded-full shadow-sm hover:shadow-md transition-all cursor-pointer"
+            <a
+              href="#contact"
+              className="inline-block px-5 py-2.5 bg-stone-900 hover:bg-stone-800 text-white font-medium text-xs tracking-wider uppercase rounded-full shadow-sm hover:shadow-md transition-all cursor-pointer"
             >
               Book Your Escape
-            </button>
+            </a>
           </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-12 pb-24 md:py-32">
+      <section className="relative overflow-hidden pt-6 pb-24 md:pt-16 md:pb-32">
         {/* Subtle romantic background gradient shape */}
         <div className="absolute top-0 right-0 -z-10 w-[70%] h-[80%] bg-gradient-to-bl from-terracotta-50/40 via-gold-50/20 to-transparent rounded-bl-[100px]" />
         
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Hero Copy */}
           <div className="lg:col-span-7 space-y-6 text-left">
-            <div className="inline-flex items-center space-x-2 bg-gold-100/60 border border-gold-400/20 px-3.5 py-1.5 rounded-full text-xs font-semibold text-gold-700 tracking-wider uppercase">
-              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-              <span>Door-to-door Sitges Pickup & Return</span>
-            </div>
+
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif text-stone-900 leading-[1.15] tracking-tight">
               Bespoke Winery Escapes <br className="hidden md:block"/>
@@ -81,12 +75,12 @@ export default function Home() {
             </div>
 
             <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
-              <button
-                onClick={() => setIsModalOpen(true)}
-                className="px-8 py-4 bg-terracotta-600 hover:bg-terracotta-700 text-white font-semibold text-sm tracking-wider uppercase rounded-lg shadow-lg hover:shadow-xl transition-all text-center cursor-pointer"
+              <a
+                href="#contact"
+                className="inline-block px-8 py-4 bg-terracotta-600 hover:bg-terracotta-700 text-white font-semibold text-sm tracking-wider uppercase rounded-lg shadow-lg hover:shadow-xl transition-all text-center cursor-pointer"
               >
                 Book Your Tour Now
-              </button>
+              </a>
               <a
                 href="#itinerary"
                 className="px-8 py-4 border border-stone-300 hover:bg-stone-100 text-stone-700 font-semibold text-sm tracking-wider uppercase rounded-lg transition-all text-center"
@@ -123,11 +117,7 @@ export default function Home() {
                 </p>
               </div>
               
-              {/* Overlay graphics showcasing premium branding */}
-              <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-lg shadow-md border border-stone-200/50">
-                <p className="text-[10px] text-stone-500 uppercase tracking-wider font-bold">Next Available Tour</p>
-                <p className="text-sm font-serif font-bold text-vineyard-900">Tomorrow, 9:00 AM</p>
-              </div>
+
             </div>
             
             {/* Visual background details */}
@@ -289,12 +279,12 @@ export default function Home() {
             </div>
 
             <div className="pt-2">
-              <button
-                onClick={() => setIsModalOpen(true)}
-                className="px-6 py-3 bg-stone-900 hover:bg-stone-800 text-white font-semibold text-xs tracking-wider uppercase rounded-lg transition-all"
+              <a
+                href="#contact"
+                className="inline-block px-6 py-3 bg-stone-900 hover:bg-stone-800 text-white font-semibold text-xs tracking-wider uppercase rounded-lg transition-all"
               >
                 Inquire About Culinary Options
-              </button>
+              </a>
             </div>
           </div>
 
@@ -318,16 +308,58 @@ export default function Home() {
             Reserve your date today. Spots are kept highly exclusive to maintain VIP estate access and premium comfort.
           </p>
           <div className="pt-4">
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="px-8 py-4 bg-terracotta-600 hover:bg-terracotta-700 text-white font-semibold text-sm tracking-wider uppercase rounded-lg shadow-xl hover:shadow-2xl transition-all cursor-pointer"
+            <a
+              href="#contact"
+              className="inline-block px-8 py-4 bg-terracotta-600 hover:bg-terracotta-700 text-white font-semibold text-sm tracking-wider uppercase rounded-lg shadow-xl hover:shadow-2xl transition-all cursor-pointer"
             >
               Book Your Wine Tasting Day Trip
-            </button>
+            </a>
           </div>
           <p className="text-xs text-stone-400">
             No upfront reservation fee required. Cancel or reschedule with 48h notice.
           </p>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-24 bg-stone-50 border-t border-stone-200/40">
+        <div className="max-w-3xl mx-auto px-6">
+          <div className="text-center space-y-4 mb-12">
+             <span className="text-terracotta-600 font-serif text-sm tracking-widest uppercase block">
+              Get in Touch
+            </span>
+
+            <p className="text-stone-600">
+              Fill out the form below and our concierge team will get back to you shortly.
+            </p>
+          </div>
+          <form className="space-y-6 bg-white p-8 rounded-2xl shadow-sm border border-stone-200/50">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2 text-left">
+                <label htmlFor="firstName" className="block text-xs font-semibold text-stone-700 uppercase tracking-wider">First Name</label>
+                <input type="text" id="firstName" className="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-terracotta-500/20 focus:border-terracotta-500 transition-all" placeholder="John" />
+              </div>
+              <div className="space-y-2 text-left">
+                <label htmlFor="lastName" className="block text-xs font-semibold text-stone-700 uppercase tracking-wider">Last Name</label>
+                <input type="text" id="lastName" className="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-terracotta-500/20 focus:border-terracotta-500 transition-all" placeholder="Doe" />
+              </div>
+            </div>
+            <div className="space-y-2 text-left">
+              <label htmlFor="email" className="block text-xs font-semibold text-stone-700 uppercase tracking-wider">Email Address</label>
+              <input type="email" id="email" className="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-terracotta-500/20 focus:border-terracotta-500 transition-all" placeholder="john@example.com" />
+            </div>
+            <div className="space-y-2 text-left">
+              <label htmlFor="phone" className="block text-xs font-semibold text-stone-700 uppercase tracking-wider">Phone Number (Optional)</label>
+              <input type="tel" id="phone" className="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-terracotta-500/20 focus:border-terracotta-500 transition-all" placeholder="+1 (555) 000-0000" />
+            </div>
+            <div className="space-y-2 text-left">
+              <label htmlFor="message" className="block text-xs font-semibold text-stone-700 uppercase tracking-wider">Message</label>
+              <textarea id="message" rows={4} className="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-terracotta-500/20 focus:border-terracotta-500 transition-all" placeholder="How can we help you prepare for your visit?"></textarea>
+            </div>
+            <button type="button" className="w-full py-4 bg-stone-900 hover:bg-stone-800 text-white font-semibold text-sm tracking-wider uppercase rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer">
+              Send Message
+            </button>
+          </form>
         </div>
       </section>
 
