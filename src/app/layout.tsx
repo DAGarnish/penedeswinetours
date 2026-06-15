@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Outfit } from "next/font/google";
 import "./globals.css";
-
+import ToastProvider from "./components/ToastProvider";
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
@@ -24,12 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${playfair.variable} ${outfit.variable} h-full antialiased scroll-smooth`}
-    >
-      <body className="min-h-full flex flex-col bg-stone-50 font-sans text-stone-900">{children}</body>
-    </html>
+    <html lang="en" className={`${playfair.variable} ${outfit.variable} h-full antialiased scroll-smooth`}><body className="min-h-full flex flex-col bg-stone-50 font-sans text-stone-900"><ToastProvider>{children}</ToastProvider></body></html>
   );
 }
 

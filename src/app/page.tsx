@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import BookingModal from "./components/BookingModal";
 import FaqSection from "./components/FaqSection";
+import ContactForm from "./components/ContactForm";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -333,33 +334,7 @@ export default function Home() {
               Fill out the form below and our concierge team will get back to you shortly.
             </p>
           </div>
-          <form className="space-y-6 bg-white p-8 rounded-2xl shadow-sm border border-stone-200/50">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2 text-left">
-                <label htmlFor="firstName" className="block text-xs font-semibold text-stone-700 uppercase tracking-wider">First Name</label>
-                <input type="text" id="firstName" className="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-terracotta-500/20 focus:border-terracotta-500 transition-all" placeholder="John" />
-              </div>
-              <div className="space-y-2 text-left">
-                <label htmlFor="lastName" className="block text-xs font-semibold text-stone-700 uppercase tracking-wider">Last Name</label>
-                <input type="text" id="lastName" className="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-terracotta-500/20 focus:border-terracotta-500 transition-all" placeholder="Doe" />
-              </div>
-            </div>
-            <div className="space-y-2 text-left">
-              <label htmlFor="email" className="block text-xs font-semibold text-stone-700 uppercase tracking-wider">Email Address</label>
-              <input type="email" id="email" className="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-terracotta-500/20 focus:border-terracotta-500 transition-all" placeholder="john@example.com" />
-            </div>
-            <div className="space-y-2 text-left">
-              <label htmlFor="phone" className="block text-xs font-semibold text-stone-700 uppercase tracking-wider">Phone Number (Optional)</label>
-              <input type="tel" id="phone" className="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-terracotta-500/20 focus:border-terracotta-500 transition-all" placeholder="+1 (555) 000-0000" />
-            </div>
-            <div className="space-y-2 text-left">
-              <label htmlFor="message" className="block text-xs font-semibold text-stone-700 uppercase tracking-wider">Message</label>
-              <textarea id="message" rows={4} className="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-terracotta-500/20 focus:border-terracotta-500 transition-all" placeholder="How can we help you prepare for your visit?"></textarea>
-            </div>
-            <button type="button" className="w-full py-4 bg-stone-900 hover:bg-stone-800 text-white font-semibold text-sm tracking-wider uppercase rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer">
-              Send Message
-            </button>
-          </form>
+          <ContactForm />
         </div>
       </section>
 
