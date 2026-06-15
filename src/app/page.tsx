@@ -56,7 +56,7 @@ export default function Home() {
             </h1>
 
             <p className="text-stone-600 text-lg md:text-xl font-normal leading-relaxed max-w-2xl">
-              Escape to the rolling Catalan vineyards of Penedès. Sip premium Cava and aged organic wines at 3 hand-selected boutique cellars, followed by a romantic tasting board curated by a former celebrity private chef. All in just half a day.
+              Escape to the rolling Catalan vineyards of Penedès. Sip premium Cava and aged organic wines at hand-selected boutique cellars, and enjoy a xarcuteria board in a beautiful setting, curated by a former celebrity private chef.
             </p>
 
             {/* Micro value statements */}
