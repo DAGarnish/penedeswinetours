@@ -51,12 +51,12 @@ export default function Home() {
 
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif text-stone-900 leading-[1.15] tracking-tight">
-              Bespoke Winery Escapes <br className="hidden md:block"/>
-              <span className="text-terracotta-600 italic font-medium">Directly From Your Sitges Villa</span>
+              Sitges to Penedès Wine Tours <br className="hidden md:block"/>
+              <span className="text-terracotta-600 italic font-medium">| Premium Vineyard Day Trip</span>
             </h1>
 
             <p className="text-stone-600 text-lg md:text-xl font-normal leading-relaxed max-w-2xl">
-              Escape to the rolling Catalan vineyards of Penedès. Sip premium Cava and aged organic wines at hand-selected boutique cellars, and enjoy a xarcuteria board in a beautiful setting, curated by a former celebrity private chef.
+              Escape to the rolling Catalan vineyards of Penedès. Sip premium Cava and aged red and white organic wines at hand-selected boutique cellars, and enjoy a xarcuteria board in a beautiful setting, curated by a former celebrity private chef.
             </p>
 
             {/* Micro value statements */}
@@ -80,7 +80,7 @@ export default function Home() {
                 href="#contact"
                 className="inline-block px-8 py-4 bg-terracotta-600 hover:bg-terracotta-700 text-white font-semibold text-sm tracking-wider uppercase rounded-lg shadow-lg hover:shadow-xl transition-all text-center cursor-pointer"
               >
-                Book Your Tour Now
+                Book Your Tour
               </a>
               <a
                 href="#itinerary"
@@ -114,7 +114,7 @@ export default function Home() {
                 </div>
                 <p className="font-serif text-2xl mb-1">“The highlight of our stay in Sitges.”</p>
                 <p className="text-xs text-stone-300 uppercase tracking-widest font-semibold">
-                  — The Hamilton Family, London (Stayed at Villa La Marina)
+                  — The Hamilton Family, London
                 </p>
               </div>
               
@@ -177,7 +177,7 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h3 className="font-serif text-xl text-stone-900">Door-to-Door Pickup</h3>
+              <h3 className="font-serif text-xl text-stone-900">Sitges Pickup</h3>
               <p className="text-stone-600 text-sm leading-relaxed">
                 Step straight from your Sitges lobby into our air-conditioned Mercedes van. Choose between 9:00 AM or 2:00 PM departures to match your pace.
               </p>
@@ -191,7 +191,7 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-11.314l.707.707m11.314 11.314l.707-.707M12 5a7 7 0 100 14 7 7 0 000-14z" />
                 </svg>
               </div>
-              <h3 className="font-serif text-xl text-stone-900">3 Boutique Wineries</h3>
+              <h3 className="font-serif text-xl text-stone-900">Curated Vineyards & Tastings</h3>
               <p className="text-stone-600 text-sm leading-relaxed">
                 VIP estate access in the Penedès & Cava region. Walk the beautiful vines and enjoy curated, guided tastings of organic white, red, and sparkling wines.
               </p>
@@ -205,7 +205,7 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
               </div>
-              <h3 className="font-serif text-xl text-stone-900">Celebrity Chef Board</h3>
+              <h3 className="font-serif text-xl text-stone-900">The Celebrity-Chef Lunch</h3>
               <p className="text-stone-600 text-sm leading-relaxed">
                 A custom-curated culinary highlight set in a romantic garden spot. Catalan charcuterie and cheeses prepared by a renowned former A-list private chef.
               </p>
@@ -219,7 +219,7 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                 </svg>
               </div>
-              <h3 className="font-serif text-xl text-stone-900">Return to Sitges</h3>
+              <h3 className="font-serif text-xl text-stone-900">Coastline Drop-off</h3>
               <p className="text-stone-600 text-sm leading-relaxed">
                 We return you safely to your villa or hotel door in time for the afternoon sun or a relaxing beach stroll before dinner. Zero stress.
               </p>
@@ -330,7 +330,30 @@ export default function Home() {
               Get in Touch
             </span>
 
-            <p className="text-stone-600">
+            <p className="text-stone-600 max-w-2xl mx-auto">
+              Ready to book? All of our tours are completely stress-free with zero hidden costs.
+            </p>
+
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 py-6">
+              <div className="flex items-center space-x-2 text-stone-700">
+                <svg className="w-5 h-5 text-terracotta-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                <span className="text-sm font-medium">Private Guide</span>
+              </div>
+              <div className="flex items-center space-x-2 text-stone-700">
+                <svg className="w-5 h-5 text-terracotta-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                <span className="text-sm font-medium">All Transport Included</span>
+              </div>
+              <div className="flex items-center space-x-2 text-stone-700">
+                <svg className="w-5 h-5 text-terracotta-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                <span className="text-sm font-medium">All Tastings Covered</span>
+              </div>
+              <div className="flex items-center space-x-2 text-stone-700">
+                <svg className="w-5 h-5 text-terracotta-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                <span className="text-sm font-medium">Chef-Curated Lunch</span>
+              </div>
+            </div>
+
+            <p className="text-stone-600 text-sm">
               Fill out the form below and our concierge team will get back to you shortly.
             </p>
           </div>
@@ -371,7 +394,7 @@ export default function Home() {
             <h4 className="text-xs uppercase font-bold tracking-wider text-stone-300 mb-4">Inquiries & Booking</h4>
             <p className="text-xs text-stone-400 mb-2">Concierge Phone:</p>
             <p className="text-sm font-semibold text-white mb-2">+34 93 811 00XX</p>
-            <p className="text-xs text-stone-400">Email: concierge@penedeswinetours.com</p>
+
           </div>
 
         </div>
