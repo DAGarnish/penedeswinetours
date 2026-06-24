@@ -52,7 +52,7 @@ export default function Home() {
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif text-stone-900 leading-[1.15] tracking-tight">
               Sitges to Penedès Wine Tours <br className="hidden md:block"/>
-              <span className="text-terracotta-600 italic font-medium">| Premium Vineyard Day Trip</span>
+              <span className="text-terracotta-600 italic font-medium">Premium Vineyard Day Trip</span>
             </h1>
 
             <p className="text-stone-600 text-lg md:text-xl font-normal leading-relaxed max-w-2xl">
