@@ -10,6 +10,7 @@ interface FaqItem {
 export default function FaqSection() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
+
   const faqs: FaqItem[] = [
     {
       question: "Where exactly is the door-to-door pickup in Sitges?",
@@ -91,9 +92,8 @@ export default function FaqSection() {
                 </button>
 
                 <div
-                  className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    isOpen ? "max-h-[300px] border-t border-stone-100" : "max-h-0"
-                  }`}
+                  className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? "max-h-[300px] border-t border-stone-100" : "max-h-0"
+                    }`}
                 >
                   <div className="p-5 md:p-6 text-stone-600 text-sm md:text-base leading-relaxed bg-stone-50/50">
                     {faq.answer}
