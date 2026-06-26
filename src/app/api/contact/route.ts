@@ -195,14 +195,10 @@ ${message}
 </html>
         `,
       };
-
-      // Send email in the background without awaiting it so the user gets an instant response
-      transporter.sendMail(mailOptions).catch((emailError) => {
-        console.error('Failed to send email notification in background:', emailError);
-      });
-
+      // Await the email sending on Vercel so the serverless function doesn't freeze before it finishes
+      await transporter.sendMail(mailOptions);
     } catch (setupError) {
-      console.error('Failed to setup email transporter:', setupError);
+      console.error('Failed to send email notification:', setupError);
     }
 
     // Return the response immediately after saving to the DB
