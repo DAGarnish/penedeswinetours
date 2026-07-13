@@ -18,7 +18,7 @@ export default function FaqSection() {
     },
     {
       question: "Is wine and food tasting included in the tour price?",
-      answer: "Absolutely. The price covers every detail: premium private transport, your dedicated sommelier host, guided VIP visits to three boutique estates, all premium wine/Cava tastings, and the custom Xarcuteria lunch board curated by our celebrity chef.",
+      answer: "Absolutely. The price covers every detail: premium private transport, your dedicated sommelier host, guided VIP visits to two contrasting boutique estates, all premium wine/Cava tastings, and the custom Xarcuteria lunch board curated by our celebrity chef.",
     },
     {
       question: "How do you handle dietary requests (like vegan, gluten-free, or vegetarian)?",
@@ -28,14 +28,14 @@ export default function FaqSection() {
             You can outline your dietary requirements in the checkout or inquiry form. Our former A-list celebrity chef creates bespoke, premium culinary selections tailored for vegetarian, vegan and gluten-free guests, ensuring these options are held to the same high standard as our signature boards—never treated as an afterthought.
           </p>
           <p>
-            Please note that all of our wines are vegan!
+            Please note that, unlike most mass-produced wines, all of our wines are vegan!
           </p>
         </div>
       ),
     },
     {
       question: "How long is the tour, and will I be back in time for the beach or dinner?",
-      answer: "The tour runs for approximately 4.5 hours. With pickups starting around 9:00 AM for the morning run, you'll be back in Sitges by 1:30 PM. For the afternoon run, we pick you up at 2:00 PM and return you by 6:30 PM—leaving you plenty of time to enjoy the evening beach or reservations.",
+      answer: "The tour runs for approximately 4 hours. With pickups starting around 9:00 AM for the morning run, you'll be back in Sitges by 1:00 PM. For the afternoon run, we pick you up at 2:00 PM and return you by 6:00 PM—leaving you plenty of time to enjoy the evening beach or reservations.",
     },
     {
       question: "What is the typical group size?",

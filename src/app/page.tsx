@@ -532,17 +532,17 @@ export default function Home() {
             Limited Openings This Summer
           </p>
           <h2 className="text-4xl md:text-5xl font-serif leading-tight">
-            Ready to Escape Sitges for the Perfect Vineyard Afternoon?
+            Ready to Escape Sitges for the Perfect Vineyard trip?
           </h2>
           <p className="text-stone-300 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-            Reserve your date today. Spots are kept highly exclusive to maintain VIP estate access and premium comfort.
+            Check availability for your preferred dates. We keep our groups small to ensure a personal, relaxed experience at each estate.
           </p>
           <div className="pt-4">
             <a
               href="#contact"
               className="inline-block px-8 py-4 bg-terracotta-600 hover:bg-terracotta-700 text-white font-semibold text-sm tracking-wider uppercase rounded-lg shadow-xl hover:shadow-2xl transition-all cursor-pointer"
             >
-              Book Your Wine Tasting Day Trip
+              Book Your Wine Tasting Trip
             </a>
           </div>
           <p className="text-xs text-stone-400">
