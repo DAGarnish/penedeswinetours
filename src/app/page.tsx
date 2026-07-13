@@ -56,7 +56,7 @@ export default function Home() {
             </h1>
 
             <p className="text-stone-600 text-lg md:text-xl font-normal leading-relaxed max-w-2xl">
-              Escape to the singular Massís del Garraf natural park, in the renowned Penedès region. Sip highly expressive organic, vegan wines shaped by limestone soils and the Mediterranean breeze, and enjoy a xarcuteria board in a beautiful setting, curated by a former celebrity private chef, all in very close proximity to Sitges.
+              Escape to the singular Massís del Garraf natural park, in the renowned Penedès region. Sip highly expressive organic, vegan wines shaped by limestone soils and the Mediterranean breeze, and enjoy a xarcuteria board in a beautiful setting, curated by our former A-list celebrity private chef, all in very close proximity to Sitges.
             </p>
 
             {/* Micro value statements */}
@@ -430,10 +430,10 @@ export default function Home() {
               Gourmet Vineyard Dining
             </span>
             <h2 className="text-3xl md:text-5xl font-serif text-stone-900 leading-tight">
-              The Celebrity-Chef Xarcuteria Experience
+              The Xarcuteria Experience
             </h2>
             <p className="text-stone-600 text-base md:text-lg leading-relaxed">
-              Set in a private, romantic pocket of the vineyard under centenary olive trees, you will dine on a custom-curated charcuterie board ("Xarcuteria"). This is exclusively prepared for our guests by a former A-list celebrity private chef.
+              Set in a private, romantic pocket of the vineyard, you will dine on a custom-curated charcuterie board ("Xarcuteria"). This is exclusively prepared for our guests by our former A-list celebrity private chef.
             </p>
             <p className="text-stone-600 text-sm md:text-base leading-relaxed">
               We source only the finest, award-winning acorn-fed Jamón Ibérico, artisan fuet, wild herb llonganissa, and small-batch Catalan cheeses aged in local cellars. Each bite is paired with the perfect wine from the estate.
@@ -444,7 +444,7 @@ export default function Home() {
               <div className="flex items-center space-x-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-gold-500" />
                 <h4 className="font-serif font-bold text-stone-900 text-sm">
-                  Gourmet Vegetarian Option
+                  Gourmet Vegetarian, Vegan, and Gluten-free Options
                 </h4>
               </div>
               <p className="text-stone-600 text-xs md:text-sm leading-relaxed">
