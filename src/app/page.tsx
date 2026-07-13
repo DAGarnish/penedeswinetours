@@ -51,12 +51,12 @@ export default function Home() {
 
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif text-stone-900 leading-[1.15] tracking-tight">
-              Sitges to Massís del Garraf <br className="hidden md:block"/>
-              <span className="text-terracotta-600 italic font-medium">Premium Vineyard Day Trip</span>
+              Sitges Wine Tasting Tour | Massís del Garraf <br className="hidden md:block"/>
+              <span className="text-terracotta-600 italic font-medium">Premium Vineyard Trip, on Sitges' Doorstep</span>
             </h1>
 
             <p className="text-stone-600 text-lg md:text-xl font-normal leading-relaxed max-w-2xl">
-              Escape to the singular Massís del Garraf natural park. Sip highly expressive organic wines shaped by limestone soils and the Mediterranean breeze, and enjoy a xarcuteria board in a beautiful setting, curated by a former celebrity private chef.
+              Escape to the singular Massís del Garraf natural park, in the renowned Penedès region. Sip highly expressive organic, vegan wines shaped by limestone soils and the Mediterranean breeze, and enjoy a xarcuteria board in a beautiful setting, curated by a former celebrity private chef, all in very close proximity to Sitges.
             </p>
 
             {/* Micro value statements */}
@@ -352,7 +352,7 @@ export default function Home() {
               </div>
               <h3 className="font-serif text-xl text-stone-900">Sitges Pickup</h3>
               <p className="text-stone-600 text-sm leading-relaxed">
-                Step straight from your Sitges lobby into our air-conditioned Mercedes van. Choose between 9:00 AM or 2:00 PM departures to match your pace.
+                Step straight from your Sitges lobby into our air-conditioned Mercedes van. Choose between 9:00 AM or 2:00 PM departures to match your pace. Vineyards are from as little as 5 minutes away!
               </p>
             </div>
 
@@ -366,7 +366,7 @@ export default function Home() {
               </div>
               <h3 className="font-serif text-xl text-stone-900">Curated Garraf Vineyards</h3>
               <p className="text-stone-600 text-sm leading-relaxed">
-                VIP estate access in the Massís del Garraf. Walk the beautiful vines and enjoy curated, guided tastings of organic white, red, and sparkling wines directly from the producers.
+                VIP estate access in the Massís del Garraf. Walk the beautiful vines and enjoy curated, guided tastings of organic white, red, and cava directly from the producers.
               </p>
             </div>
 

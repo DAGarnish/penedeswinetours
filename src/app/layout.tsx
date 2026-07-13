@@ -13,8 +13,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Sitges to Penedès Wine Tours | Premium Vineyard Day Trip",
-  description: "Boutique half-day wine tour departing directly from your Sitges location. Explore stunning Penedès vineyards & enjoy a luxury catering by a celebrity chef.",
+  title: "Sitges Wine Tasting Tours | Premium Vineyard Trip",
+  description: "Boutique half-day wine tour departing from your Sitges location. Explore stunning Garraf vineyards in the Penedès region & enjoy luxury catering by a celebrity chef.",
   keywords: ["wine tasting from Sitges", "Cava winery day trip", "Penedès vineyard tour", "luxury wine tours Spain", "Sitges excursions"],
 };
 
