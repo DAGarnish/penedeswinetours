@@ -621,9 +621,19 @@ export default function Home() {
 
           <div>
             <h4 className="text-xs uppercase font-bold tracking-wider text-stone-300 mb-4">Inquiries & Booking</h4>
-            <p className="text-xs text-stone-400 mb-2">Concierge Phone:</p>
-            <p className="text-sm font-semibold text-white mb-2">+34 93 811 00XX</p>
-
+            <button
+              onClick={() => {
+                const prefix = "34";
+                const num = "603904089";
+                window.open(`https://wa.me/${prefix}${num}`, '_blank');
+              }}
+              className="flex items-center space-x-2.5 text-stone-400 hover:text-white transition-colors group mt-2"
+            >
+              <svg className="w-5 h-5 text-[#25D366] opacity-90 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12.031 0C5.383 0 0 5.383 0 12.031c0 2.124.553 4.195 1.603 6.002L.031 24l6.105-1.603A11.968 11.968 0 0012.031 24c6.647 0 12.031-5.383 12.031-12.031S18.679 0 12.031 0zm0 21.969c-1.807 0-3.578-.485-5.124-1.401l-.367-.217-3.805.998.998-3.712-.238-.379A9.923 9.923 0 012.062 12.031c0-5.503 4.482-9.985 9.985-9.985 5.503 0 9.985 4.482 9.985 9.985s-4.482 9.969-9.985 9.969zm5.474-7.481c-.301-.151-1.782-.881-2.059-.982-.278-.101-.482-.151-.685.151-.202.301-.777.982-.953 1.183-.176.202-.352.227-.654.076-1.554-.78-2.686-1.41-3.694-2.835-.261-.368.261-.342.846-1.512.101-.202.05-.379-.026-.53-.076-.151-.685-1.654-.937-2.264-.246-.595-.494-.515-.685-.525-.176-.008-.379-.011-.581-.011-.202 0-.53.076-.807.379-.278.301-1.059 1.034-1.059 2.522 0 1.488 1.084 2.927 1.236 3.129.151.202 2.133 3.256 5.166 4.565 2.124.919 2.871.986 3.921.833 1.134-.165 2.502-.998 2.855-1.963.353-.965.353-1.792.247-1.963-.106-.171-.383-.272-.685-.423z"/>
+              </svg>
+              <span className="text-sm font-medium tracking-wide">Concierge WhatsApp</span>
+            </button>
           </div>
 
         </div>
