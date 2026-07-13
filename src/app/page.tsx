@@ -16,7 +16,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex flex-col">
             <span className="font-serif text-lg md:text-xl font-bold tracking-wide text-stone-800">
-              GARRAF <span className="text-terracotta-600">WINE TOURS</span>
+              PENEDÈS <span className="text-terracotta-600">WINE TOURS</span>
             </span>
             <span className="text-[10px] tracking-widest uppercase text-stone-500 font-semibold -mt-1">
               Sitges Departures
@@ -352,7 +352,7 @@ export default function Home() {
               </div>
               <h3 className="font-serif text-xl text-stone-900">Sitges Pickup</h3>
               <p className="text-stone-600 text-sm leading-relaxed">
-                Step straight from your Sitges lobby into our air-conditioned Mercedes van. Choose between 9:00 AM or 2:00 PM departures to match your pace. Vineyards are from as little as 5 minutes away!
+                Step straight from your Sitges lobby into our air-conditioned mini-van. Choose between 9:00 AM or 2:00 PM departures to match your pace. Vineyards are from as little as 5 minutes away!
               </p>
             </div>
 
@@ -596,7 +596,7 @@ export default function Home() {
           
           <div className="space-y-4">
             <p className="font-serif text-white font-bold tracking-wide">
-              GARRAF <span className="text-terracotta-500">WINE TOURS</span>
+              PENEDÈS <span className="text-terracotta-500">WINE TOURS</span>
             </p>
             <p className="text-xs leading-relaxed text-stone-400">
               Curating exclusive, half-day tours from Sitges into the heart of the Massís del Garraf wine country. Premium local hosts, Mercedes-class pickup, and A-list chef dining.
