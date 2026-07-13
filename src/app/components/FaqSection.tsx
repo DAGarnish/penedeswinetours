@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 interface FaqItem {
   question: string;
-  answer: string;
+  answer: React.ReactNode;
 }
 
 export default function FaqSection() {
@@ -22,7 +22,16 @@ export default function FaqSection() {
     },
     {
       question: "How do you handle dietary requests (like vegan, gluten-free, or vegetarian)?",
-      answer: "You can specify your requirements in the checkout/inquiry form. Our former A-list celebrity chef designs bespoke, premium culinary plates for vegetarians, vegans, and gluten-free guests. There are no 'afterthought' salads; your board will be curated to the same premium standard as the standard board.",
+      answer: (
+        <div className="space-y-4">
+          <p>
+            You can outline your dietary requirements in the checkout or inquiry form. Our former A-list celebrity chef creates bespoke, premium culinary selections tailored for vegetarian, vegan and gluten-free guests, ensuring these options are held to the same high standard as our signature boards—never treated as an afterthought.
+          </p>
+          <p>
+            Please note that all of our wines are vegan!
+          </p>
+        </div>
+      ),
     },
     {
       question: "How long is the tour, and will I be back in time for the beach or dinner?",

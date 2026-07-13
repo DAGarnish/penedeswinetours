@@ -16,7 +16,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex flex-col">
             <span className="font-serif text-lg md:text-xl font-bold tracking-wide text-stone-800">
-              PENEDÈS <span className="text-terracotta-600">WINE TOURS</span>
+              GARRAF <span className="text-terracotta-600">WINE TOURS</span>
             </span>
             <span className="text-[10px] tracking-widest uppercase text-stone-500 font-semibold -mt-1">
               Sitges Departures
@@ -51,18 +51,18 @@ export default function Home() {
 
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif text-stone-900 leading-[1.15] tracking-tight">
-              Sitges to Penedès Wine Tours <br className="hidden md:block"/>
+              Sitges to Massís del Garraf <br className="hidden md:block"/>
               <span className="text-terracotta-600 italic font-medium">Premium Vineyard Day Trip</span>
             </h1>
 
             <p className="text-stone-600 text-lg md:text-xl font-normal leading-relaxed max-w-2xl">
-              Escape to the rolling Catalan vineyards of Penedès. Sip premium Cava and aged red and white organic wines at hand-selected boutique cellars, and enjoy a xarcuteria board in a beautiful setting, curated by a former celebrity private chef.
+              Escape to the singular Massís del Garraf natural park. Sip highly expressive organic wines shaped by limestone soils and the Mediterranean breeze, and enjoy a xarcuteria board in a beautiful setting, curated by a former celebrity private chef.
             </p>
 
             {/* Micro value statements */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-2 border-y border-stone-200/50">
               <div className="flex items-center space-x-2.5">
-                <span className="text-terracotta-500 font-bold text-lg">4.5h</span>
+                <span className="text-terracotta-500 font-bold text-lg">4h</span>
                 <span className="text-stone-600 text-sm leading-tight">Fits perfectly into your holiday schedule</span>
               </div>
               <div className="flex items-center space-x-2.5">
@@ -151,6 +151,179 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Our Curated Portfolio Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="text-terracotta-600 font-serif text-sm tracking-widest uppercase block mb-3">
+              Exclusive Access
+            </span>
+            <h2 className="text-3xl md:text-4xl font-serif text-stone-900 leading-tight">
+              Our Curated Portfolio
+            </h2>
+            <p className="text-stone-600 mt-4 text-sm md:text-base leading-relaxed">
+              Each day trip visits two contrasting vineyards from our carefully selected portfolio, giving you exclusive access to the most authentic, ecological, and character-driven estates in the Garraf.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            {/* Hospital de Sitges */}
+            <div className="bg-stone-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col">
+              <div className="aspect-[4/3] w-full relative overflow-hidden bg-stone-200">
+                <img src="/hospital_de_sitges.png" alt="Hospital de Sitges" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              </div>
+              <div className="p-6 space-y-4 flex-grow flex flex-col">
+                <div className="flex-grow space-y-2">
+                  <h3 className="font-serif text-lg text-stone-900">Hospital de Sitges</h3>
+                  <p className="text-stone-600 text-sm leading-relaxed">
+                    Preserving the legacy of the Malvasía grape since 1935. A tiny, historic urban vineyard where tradition, organic farming, and the sea breeze meet.
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-stone-200/50">
+                  <span className="text-xs uppercase tracking-widest text-terracotta-600 font-semibold block mb-1">Signature Taste</span>
+                  <p className="text-xs text-stone-600 font-medium">Malvasia Dolça <span className="font-normal">— Iconic, honeyed, and perfectly balanced.</span></p>
+                </div>
+              </div>
+            </div>
+
+            {/* Clos dels Guarans */}
+            <div className="bg-stone-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col">
+              <div className="aspect-[4/3] w-full relative overflow-hidden bg-stone-200">
+                <img src="/clos_dels_guarans.png" alt="Clos dels Guarans" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              </div>
+              <div className="p-6 space-y-4 flex-grow flex flex-col">
+                <div className="flex-grow space-y-2">
+                  <h3 className="font-serif text-lg text-stone-900">Clos dels Guarans</h3>
+                  <p className="text-stone-600 text-sm leading-relaxed">
+                    A small family winery recovering ancestral varieties and working the vines with nature to produce expressive, easy-to-drink wines.
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-stone-200/50">
+                  <span className="text-xs uppercase tracking-widest text-terracotta-600 font-semibold block mb-1">Signature Taste</span>
+                  <p className="text-xs text-stone-600 font-medium">L'Abellar <span className="font-normal">— A structural white aged in chestnut barrels.</span></p>
+                </div>
+              </div>
+            </div>
+
+            {/* Finca Mas Perdut */}
+            <div className="bg-stone-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col">
+              <div className="aspect-[4/3] w-full relative overflow-hidden bg-stone-200">
+                <img src="/finca_mas_perdut.png" alt="Finca Mas Perdut" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              </div>
+              <div className="p-6 space-y-4 flex-grow flex flex-col">
+                <div className="flex-grow space-y-2">
+                  <h3 className="font-serif text-lg text-stone-900">Finca Mas Perdut</h3>
+                  <p className="text-stone-600 text-sm leading-relaxed">
+                    Fifth-generation winemakers since 1868, defending the living vineyard and bottling the pure essence of limestone earth in amphoras.
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-stone-200/50">
+                  <span className="text-xs uppercase tracking-widest text-terracotta-600 font-semibold block mb-1">Signature Taste</span>
+                  <p className="text-xs text-stone-600 font-medium">Cervell <span className="font-normal">— A juicy natural red crafted in demijohns.</span></p>
+                </div>
+              </div>
+            </div>
+
+            {/* VallDolina */}
+            <div className="bg-stone-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col">
+              <div className="aspect-[4/3] w-full relative overflow-hidden bg-stone-200">
+                <img src="/valldolina.png" alt="VallDolina" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              </div>
+              <div className="p-6 space-y-4 flex-grow flex flex-col">
+                <div className="flex-grow space-y-2">
+                  <h3 className="font-serif text-lg text-stone-900">VallDolina</h3>
+                  <p className="text-stone-600 text-sm leading-relaxed">
+                    A spectacularly integrated estate in Olesa de Bonesvalls championing biodynamics, low production, and profound terroir expression.
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-stone-200/50">
+                  <span className="text-xs uppercase tracking-widest text-terracotta-600 font-semibold block mb-1">Signature Taste</span>
+                  <p className="text-xs text-stone-600 font-medium">Gran Reserva Cava <span className="font-normal">— Deeply aromatic, crisp, and alive.</span></p>
+                </div>
+              </div>
+            </div>
+
+            {/* Finca Valldosera */}
+            <div className="bg-stone-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col">
+              <div className="aspect-[4/3] w-full relative overflow-hidden bg-stone-200">
+                <img src="/finca_valldosera.png" alt="Finca Valldosera" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              </div>
+              <div className="p-6 space-y-4 flex-grow flex flex-col">
+                <div className="flex-grow space-y-2">
+                  <h3 className="font-serif text-lg text-stone-900">Finca Valldosera</h3>
+                  <p className="text-stone-600 text-sm leading-relaxed">
+                    Founded in 1980 deeply within the Massís, focusing on the Subirat Parent grape to create wines with incredible aging potential.
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-stone-200/50">
+                  <span className="text-xs uppercase tracking-widest text-terracotta-600 font-semibold block mb-1">Signature Taste</span>
+                  <p className="text-xs text-stone-600 font-medium">Subirat Parent <span className="font-normal">— Subtle, floral, and elegantly mineral.</span></p>
+                </div>
+              </div>
+            </div>
+
+            {/* Vega de Ribes */}
+            <div className="bg-stone-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col">
+              <div className="aspect-[4/3] w-full relative overflow-hidden bg-stone-200">
+                <img src="/vega_de_ribes.png" alt="Vega de Ribes" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              </div>
+              <div className="p-6 space-y-4 flex-grow flex flex-col">
+                <div className="flex-grow space-y-2">
+                  <h3 className="font-serif text-lg text-stone-900">Vega de Ribes</h3>
+                  <p className="text-stone-600 text-sm leading-relaxed">
+                    Pioneers in organic agriculture since the 12th century, bringing highly typical marine-influenced wines to the forefront.
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-stone-200/50">
+                  <span className="text-xs uppercase tracking-widest text-terracotta-600 font-semibold block mb-1">Signature Taste</span>
+                  <p className="text-xs text-stone-600 font-medium">Sasserra <span className="font-normal">— An iconic, complex 100% Malvasía.</span></p>
+                </div>
+              </div>
+            </div>
+
+            {/* Masia de la Roqua */}
+            <div className="bg-stone-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col">
+              <div className="aspect-[4/3] w-full relative overflow-hidden bg-stone-200">
+                <img src="/masia_de_la_roqua.png" alt="Masia de la Roqua" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              </div>
+              <div className="p-6 space-y-4 flex-grow flex flex-col">
+                <div className="flex-grow space-y-2">
+                  <h3 className="font-serif text-lg text-stone-900">Masia de la Roqua</h3>
+                  <p className="text-stone-600 text-sm leading-relaxed">
+                    Built upon the limestone rock in 1164. Today they ferment with wild yeasts to keep their ecosystem as alive as possible.
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-stone-200/50">
+                  <span className="text-xs uppercase tracking-widest text-terracotta-600 font-semibold block mb-1">Signature Taste</span>
+                  <p className="text-xs text-stone-600 font-medium">El Truc Blanc <span className="font-normal">— An agile, delicate natural white.</span></p>
+                </div>
+              </div>
+            </div>
+
+            {/* Puig Batet */}
+            <div className="bg-stone-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col">
+              <div className="aspect-[4/3] w-full relative overflow-hidden bg-stone-200">
+                <img src="/puig_batet.png" alt="Puig Batet" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              </div>
+              <div className="p-6 space-y-4 flex-grow flex flex-col">
+                <div className="flex-grow space-y-2">
+                  <h3 className="font-serif text-lg text-stone-900">Puig Batet</h3>
+                  <p className="text-stone-600 text-sm leading-relaxed">
+                    Three generations working centenary vineyards, producing highly artisanal wines shaped by both sea and mountain elements.
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-stone-200/50">
+                  <span className="text-xs uppercase tracking-widest text-terracotta-600 font-semibold block mb-1">Signature Taste</span>
+                  <p className="text-xs text-stone-600 font-medium">Xic <span className="font-normal">— A lively young white with Garraf DNA.</span></p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* The Itinerary Section */}
       <section id="itinerary" className="py-24 bg-stone-50">
         <div className="max-w-7xl mx-auto px-6">
@@ -191,9 +364,9 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-11.314l.707.707m11.314 11.314l.707-.707M12 5a7 7 0 100 14 7 7 0 000-14z" />
                 </svg>
               </div>
-              <h3 className="font-serif text-xl text-stone-900">Curated Vineyards & Tastings</h3>
+              <h3 className="font-serif text-xl text-stone-900">Curated Garraf Vineyards</h3>
               <p className="text-stone-600 text-sm leading-relaxed">
-                VIP estate access in the Penedès & Cava region. Walk the beautiful vines and enjoy curated, guided tastings of organic white, red, and sparkling wines.
+                VIP estate access in the Massís del Garraf. Walk the beautiful vines and enjoy curated, guided tastings of organic white, red, and sparkling wines directly from the producers.
               </p>
             </div>
 
@@ -245,7 +418,7 @@ export default function Home() {
             <div className="relative aspect-video w-full rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-stone-200">
               <img
                 src="/vegan_board.png"
-                alt="Plant-based vegan artisanal board"
+                alt="Vegetarian artisanal board"
                 className="absolute inset-0 w-full h-full object-cover"
               />
             </div>
@@ -266,7 +439,7 @@ export default function Home() {
               We source only the finest, award-winning acorn-fed Jamón Ibérico, artisan fuet, wild herb llonganissa, and small-batch Catalan cheeses aged in local cellars. Each bite is paired with the perfect wine from the estate.
             </p>
             
-            {/* Dietary notes calling out premium veg/vegan */}
+            {/* Dietary notes calling out premium veg */}
             <div className="p-5 bg-gold-50/60 border border-gold-400/20 rounded-xl space-y-3">
               <div className="flex items-center space-x-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-gold-500" />
@@ -275,7 +448,7 @@ export default function Home() {
                 </h4>
               </div>
               <p className="text-stone-600 text-xs md:text-sm leading-relaxed">
-                Dietary requirements are never treated as an afterthought. Our chef custom-designs bespoke plates, featuring roasted local heritage vegetables, premium seed crackers, artisan plant-based cheeses, and house-cured green olives, ensuring every traveler dines in luxury.
+                Dietary requirements are never treated as an afterthought. Our chef custom-designs bespoke plates, featuring roasted local heritage vegetables, premium seed crackers, artisan cheeses, and house-cured green olives, ensuring every traveler dines in luxury.
               </p>
             </div>
 
@@ -286,6 +459,62 @@ export default function Home() {
               >
                 Inquire About Culinary Options
               </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* The Garraf Deep Dive */}
+      <section className="py-24 bg-white border-t border-stone-200/40">
+        <div className="max-w-7xl mx-auto px-6 space-y-24">
+          
+          {/* Intro */}
+          <div className="text-center max-w-3xl mx-auto">
+            <span className="text-terracotta-600 font-serif text-sm tracking-widest uppercase block mb-3">
+              The Garraf Difference
+            </span>
+            <h2 className="text-3xl md:text-5xl font-serif text-stone-900 leading-tight mb-6">
+              A Singular Terroir, Unlike Any Other
+            </h2>
+            <p className="text-stone-600 text-base md:text-lg leading-relaxed">
+              While the inland plains of the Penedès are famous for high-yield clay soils, the Massís del Garraf is a protected natural park rising from the Mediterranean Sea. Here, heroic viticulture is practiced on rugged limestone mountains, producing highly expressive, low-yield wines that simply cannot be replicated anywhere else.
+            </p>
+          </div>
+
+          {/* Feature 1: Soil */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="relative aspect-video lg:aspect-square w-full rounded-2xl overflow-hidden shadow-xl border-4 border-stone-100">
+              <img src="/garraf_soil.png" alt="Shallow limestone soil of the Garraf" className="absolute inset-0 w-full h-full object-cover" />
+            </div>
+            <div className="space-y-6 lg:order-last">
+              <h3 className="text-2xl md:text-3xl font-serif text-stone-900 leading-tight">
+                Shallow Limestone & "Roca Calcárea"
+              </h3>
+              <p className="text-stone-600 leading-relaxed">
+                In the Garraf, the topsoil is incredibly shallow before hitting solid limestone bedrock. This poor water retention forces the vines to struggle, pushing their roots deep into the rock fractures to find microelements.
+              </p>
+              <p className="text-stone-600 leading-relaxed">
+                The result? Drastically lower yields than the inland Penedès, but grapes with massive concentration. The wines boast marked minerality, incredible structure, and an unmistakable "chalky" typicity.
+              </p>
+            </div>
+          </div>
+
+          {/* Feature 2: Climate & Sea */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-6 order-last lg:order-first">
+              <h3 className="text-2xl md:text-3xl font-serif text-stone-900 leading-tight">
+                "La Marinada" & The Mediterranean Forest
+              </h3>
+              <p className="text-stone-600 leading-relaxed">
+                Rising up to 593 meters directly from the coast, our vineyards are constantly bathed in the sea breeze known locally as <em>la marinada</em>. This acts as a natural thermoregulator, keeping the vines cooler than the hot inland plains and allowing for a long, stable maturation.
+              </p>
+              <p className="text-stone-600 leading-relaxed">
+                The marine influence leaves a literal trace of salinity on the grape skins, giving Garraf wines their famous savory, saline finish. Surrounded by wild Mediterranean forests of pine, rosemary, and fennel, the grapes also absorb herbal and balsamic notes that transport you straight to the terroir with every sip.
+              </p>
+            </div>
+            <div className="relative aspect-video lg:aspect-square w-full rounded-2xl overflow-hidden shadow-xl border-4 border-stone-100">
+              <img src="/garraf_sea.png" alt="The Mediterranean Sea breeze hitting the Garraf vines" className="absolute inset-0 w-full h-full object-cover" />
             </div>
           </div>
 
@@ -367,10 +596,10 @@ export default function Home() {
           
           <div className="space-y-4">
             <p className="font-serif text-white font-bold tracking-wide">
-              PENEDÈS <span className="text-terracotta-500">WINE TOURS</span>
+              GARRAF <span className="text-terracotta-500">WINE TOURS</span>
             </p>
             <p className="text-xs leading-relaxed text-stone-400">
-              Curating exclusive, half-day tours from Sitges into the heart of the Penedès & Cava wine country. Premium local hosts, Mercedes-class pickup, and A-list chef dining.
+              Curating exclusive, half-day tours from Sitges into the heart of the Massís del Garraf wine country. Premium local hosts, Mercedes-class pickup, and A-list chef dining.
             </p>
           </div>
 
