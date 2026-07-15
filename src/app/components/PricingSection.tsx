@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 export default function PricingSection({ onBookNow }: { onBookNow?: (message: string) => void }) {
   const [guests, setGuests] = useState(8);
   const [addToOpenGroup, setAddToOpenGroup] = useState(false);
-  const [selectedDates, setSelectedDates] = useState<string[]>([]);
+  const [selectedDates, setSelectedDates] = useState<{ date: string; hasPreference: boolean }[]>([]);
   const [currentDate, setCurrentDate] = useState(new Date());
 
   const pricingMap: Record<number, number> = {
@@ -26,22 +26,37 @@ export default function PricingSection({ onBookNow }: { onBookNow?: (message: st
     setAddToOpenGroup(e.target.checked);
   };
 
-  const toggleDate = (dateStr: string) => {
-    setSelectedDates((prev) => 
-      prev.includes(dateStr) 
-        ? prev.filter((d) => d !== dateStr) 
-        : [...prev, dateStr]
-    );
+  const toggleDate = (dateStr: string, isShiftClick: boolean) => {
+    setSelectedDates((prev) => {
+      const exists = prev.find(d => d.date === dateStr);
+      if (exists) {
+        return prev.filter(d => d.date !== dateStr);
+      } else {
+        return [...prev, { date: dateStr, hasPreference: !isShiftClick }];
+      }
+    });
   };
 
   const handleBookNow = () => {
     let msg = `Dear team,\n\nI am interested in booking a tour for ${guests} ${guests === 1 ? 'guest' : 'guests'}.`;
     
     if (selectedDates.length > 0) {
-      if (addToOpenGroup) {
-        msg += `\nI would also like to join an open group to reduce the price. I am available on the following dates (in order of preference): ${selectedDates.join(", ")}.`;
+      const prefDates = selectedDates.filter(d => d.hasPreference).map(d => d.date);
+      const noPrefDates = selectedDates.filter(d => !d.hasPreference).map(d => d.date);
+      
+      let dateMsg = "";
+      if (prefDates.length > 0 && noPrefDates.length > 0) {
+        dateMsg = `the following dates (in order of preference): ${prefDates.join(", ")} and these additional dates (no preference): ${noPrefDates.join(", ")}`;
+      } else if (prefDates.length > 0) {
+        dateMsg = `the following dates (in order of preference): ${prefDates.join(", ")}`;
       } else {
-        msg += `\nI am available on the following dates (in order of preference): ${selectedDates.join(", ")}.`;
+        dateMsg = `the following dates (no preference): ${noPrefDates.join(", ")}`;
+      }
+
+      if (addToOpenGroup) {
+        msg += `\nI would also like to join an open group to reduce the price. I am available on ${dateMsg}.`;
+      } else {
+        msg += `\nI am available on ${dateMsg}.`;
       }
     }
     
@@ -136,7 +151,7 @@ export default function PricingSection({ onBookNow }: { onBookNow?: (message: st
             {/* Static Calendar */}
             <div className="mb-10 bg-white rounded-2xl shadow-sm border border-stone-200/50 p-6 w-full max-w-sm mx-auto">
               <h3 className="font-serif text-xl text-stone-900 mb-1">Select Available Dates</h3>
-              <p className="text-xs text-stone-500 mb-6">Choose all dates you are available. Click in order of preference.</p>
+              <p className="text-xs text-stone-500 mb-6">Choose all dates you are available. Click in order of preference (hold Shift while clicking for no preference).</p>
 
               <div className="flex items-center justify-between mb-4">
                 <button onClick={prevMonth} className="p-1.5 hover:bg-stone-100 rounded-lg transition-colors">
@@ -162,14 +177,21 @@ export default function PricingSection({ onBookNow }: { onBookNow?: (message: st
                 ))}
                 {days.map(d => {
                   const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
-                  const isSelected = selectedDates.includes(dateStr);
+                  const selectionItem = selectedDates.find(item => item.date === dateStr);
+                  const isSelected = !!selectionItem;
                   const isPast = new Date(year, month, d) < new Date(new Date().setHours(0,0,0,0));
+                  
+                  let prefNumber = null;
+                  if (selectionItem?.hasPreference) {
+                    const prefDates = selectedDates.filter(item => item.hasPreference);
+                    prefNumber = prefDates.findIndex(item => item.date === dateStr) + 1;
+                  }
 
                   return (
                     <button
                       key={d}
                       disabled={isPast}
-                      onClick={() => toggleDate(dateStr)}
+                      onClick={(e) => toggleDate(dateStr, e.shiftKey)}
                       className={`w-full aspect-square rounded-full flex items-center justify-center text-sm transition-colors relative ${
                         isPast 
                           ? 'text-stone-300 cursor-not-allowed'
@@ -179,9 +201,9 @@ export default function PricingSection({ onBookNow }: { onBookNow?: (message: st
                       }`}
                     >
                       {d}
-                      {isSelected && (
+                      {prefNumber !== null && (
                         <span className="absolute -top-1 -right-1 bg-stone-900 text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center border-2 border-white shadow-sm">
-                          {selectedDates.indexOf(dateStr) + 1}
+                          {prefNumber}
                         </span>
                       )}
                     </button>

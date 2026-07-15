@@ -42,7 +42,7 @@ export default function Home() {
               href="#contact"
               className="inline-block px-5 py-2.5 bg-stone-900 hover:bg-stone-800 text-white font-medium text-xs tracking-wider uppercase rounded-full shadow-sm hover:shadow-md transition-all cursor-pointer"
             >
-              Book Your Escape
+              Book Your Experience
             </a>
           </div>
         </div>
@@ -85,10 +85,10 @@ export default function Home() {
 
             <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
               <a
-                href="#contact"
+                href="#pricing"
                 className="inline-block px-8 py-4 bg-terracotta-600 hover:bg-terracotta-700 text-white font-semibold text-sm tracking-wider uppercase rounded-lg shadow-lg hover:shadow-xl transition-all text-center cursor-pointer"
               >
-                Book Your Tour
+                Book Your Experience
               </a>
               <a
                 href="#itinerary"
