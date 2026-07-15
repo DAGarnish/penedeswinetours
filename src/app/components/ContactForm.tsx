@@ -1,10 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 
-export default function ContactForm() {
+export default function ContactForm({ initialMessage = "" }: { initialMessage?: string }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState(initialMessage);
+
+  useEffect(() => {
+    if (initialMessage) {
+      setMessage(initialMessage);
+    }
+  }, [initialMessage]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -73,7 +80,7 @@ export default function ContactForm() {
       </div>
       <div className="space-y-2 text-left">
         <label htmlFor="message" className="block text-xs font-semibold text-stone-700 uppercase tracking-wider">Message</label>
-        <textarea required id="message" name="message" rows={4} className="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-terracotta-500/20 focus:border-terracotta-500 transition-all" placeholder="How can we help you prepare for your visit?"></textarea>
+        <textarea required id="message" name="message" value={message} onChange={(e) => setMessage(e.target.value)} rows={4} className="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-terracotta-500/20 focus:border-terracotta-500 transition-all" placeholder="How can we help you prepare for your visit?"></textarea>
       </div>
       <button disabled={isSubmitting} type="submit" className="w-full py-4 bg-stone-900 hover:bg-stone-800 disabled:opacity-70 disabled:cursor-not-allowed text-white font-semibold text-sm tracking-wider uppercase rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer">
         {isSubmitting ? "Sending..." : "Send Message"}

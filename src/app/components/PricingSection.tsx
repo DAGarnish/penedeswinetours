@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
-export default function PricingSection() {
+export default function PricingSection({ onBookNow }: { onBookNow?: (message: string) => void }) {
   const [guests, setGuests] = useState(8);
   const [addToOpenGroup, setAddToOpenGroup] = useState(false);
   const [showCalendar, setShowCalendar] = useState(false);
@@ -39,6 +39,15 @@ export default function PricingSection() {
         ? prev.filter((d) => d !== dateStr) 
         : [...prev, dateStr]
     );
+  };
+
+  const handleBookNow = () => {
+    let msg = `Dear team,\n\nI am interested in booking a tour for ${guests} ${guests === 1 ? 'guest' : 'guests'}.`;
+    if (addToOpenGroup && selectedDates.length > 0) {
+      msg += `\nI would also like to join an open group to reduce the price. I am available on: ${selectedDates.join(", ")}.`;
+    }
+    
+    if (onBookNow) onBookNow(msg);
   };
 
   const year = currentDate.getFullYear();
@@ -131,9 +140,15 @@ export default function PricingSection() {
             <div className="text-5xl md:text-6xl font-serif text-stone-900 transition-all">
               €{currentPrice}
             </div>
-            <p className="text-xs text-stone-500 mt-4 max-w-xs mx-auto leading-relaxed">
+            <p className="text-xs text-stone-500 mt-4 max-w-xs mx-auto leading-relaxed mb-6">
               Fully inclusive of transport, private sommelier, all tastings, and the celebrity-chef curated lunch. No hidden fees.
             </p>
+            <button 
+              onClick={handleBookNow}
+              className="px-8 py-4 bg-terracotta-600 hover:bg-terracotta-700 text-white font-semibold text-sm tracking-wider uppercase rounded-lg shadow-lg hover:shadow-xl transition-all w-full max-w-xs"
+            >
+              Book Now
+            </button>
           </div>
         </div>
       </div>

@@ -13,8 +13,8 @@ export default function FaqSection() {
 
   const faqs: FaqItem[] = [
     {
-      question: "Where exactly is the door-to-door pickup in Sitges?",
-      answer: "We pick you up directly from the lobby of your hotel or the front gate of your private villa anywhere in Sitges. You don't need to navigate to a meeting point. Just step outside, and our luxury air-conditioned transport will be waiting.",
+      question: "Where does the tour begin?",
+      answer: "We meet at 14:00 directly at the historic Celler de l'Hospital de Sitges in town. From there, our driver handles all transport into the Garraf region before returning you to the Celler.",
     },
     {
       question: "Is wine and food tasting included in the tour price?",
@@ -35,11 +35,11 @@ export default function FaqSection() {
     },
     {
       question: "How long is the tour, and will I be back in time for the beach or dinner?",
-      answer: "The tour runs for approximately 4 hours. With pickups starting around 9:00 AM for the morning run, you'll be back in Sitges by 1:00 PM. For the afternoon run, we pick you up at 2:00 PM and return you by 6:00 PM—leaving you plenty of time to enjoy the evening beach or reservations.",
+      answer: "The formal tour starts at 14:00 and lasts around 4 hours, bringing you through the vineyards and concluding with your culinary pairing back at Celler de l'Hospital. Afterward, you are welcome to stay and relax into the evening at El Clastré!",
     },
     {
       question: "What is the typical group size?",
-      answer: "To ensure an intimate and luxurious experience, our group sizes are kept small, typically ranging from 2 to 8 guests. This allows for personalized attention from the winemaker hosts and our tour guide.",
+      answer: "To ensure an intimate and luxurious experience, our group sizes are kept small, typically ranging from 1 to 8 guests. This allows for personalized attention from the winemaker hosts and our tour guide.",
     },
     {
       question: "Can I book a fully private tour for a special event?",
