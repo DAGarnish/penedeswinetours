@@ -1,12 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function PricingSection({ onBookNow }: { onBookNow?: (message: string) => void }) {
   const [guests, setGuests] = useState(8);
   const [addToOpenGroup, setAddToOpenGroup] = useState(false);
-  const [showCalendar, setShowCalendar] = useState(false);
   const [selectedDates, setSelectedDates] = useState<string[]>([]);
   const [currentDate, setCurrentDate] = useState(new Date());
 
@@ -24,13 +23,7 @@ export default function PricingSection({ onBookNow }: { onBookNow?: (message: st
   const currentPrice = pricingMap[guests];
 
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const isChecked = e.target.checked;
-    setAddToOpenGroup(isChecked);
-    if (isChecked) {
-      setShowCalendar(true);
-    } else {
-      setSelectedDates([]);
-    }
+    setAddToOpenGroup(e.target.checked);
   };
 
   const toggleDate = (dateStr: string) => {
@@ -43,8 +36,13 @@ export default function PricingSection({ onBookNow }: { onBookNow?: (message: st
 
   const handleBookNow = () => {
     let msg = `Dear team,\n\nI am interested in booking a tour for ${guests} ${guests === 1 ? 'guest' : 'guests'}.`;
-    if (addToOpenGroup && selectedDates.length > 0) {
-      msg += `\nI would also like to join an open group to reduce the price. I am available on: ${selectedDates.join(", ")}.`;
+    
+    if (selectedDates.length > 0) {
+      if (addToOpenGroup) {
+        msg += `\nI would also like to join an open group to reduce the price. I am available on the following dates (in order of preference): ${selectedDates.join(", ")}.`;
+      } else {
+        msg += `\nI am available on the following dates (in order of preference): ${selectedDates.join(", ")}.`;
+      }
     }
     
     if (onBookNow) onBookNow(msg);
@@ -123,110 +121,90 @@ export default function PricingSection({ onBookNow }: { onBookNow?: (message: st
               <label htmlFor="openGroup" className="text-stone-700 font-medium cursor-pointer select-none">
                 Add to open group to reduce price?
               </label>
-              
-              {addToOpenGroup && (
-                <button 
-                  onClick={() => setShowCalendar(true)}
-                  className="ml-2 text-xs bg-stone-100 hover:bg-stone-200 text-stone-700 px-3 py-1.5 rounded-full transition-colors font-medium"
-                >
-                  {selectedDates.length > 0 ? `${selectedDates.length} Dates Selected` : 'Select Dates'}
-                </button>
-              )}
             </div>
           )}
 
-          <div className="pt-8 border-t border-stone-200/70 flex flex-col items-center">
+          <div className="pt-8 border-t border-stone-200/70 flex flex-col items-center w-full">
             <p className="text-sm font-semibold text-stone-500 uppercase tracking-widest mb-3">Price Per Person</p>
             <div className="text-5xl md:text-6xl font-serif text-stone-900 transition-all">
               €{currentPrice}
             </div>
-            <p className="text-xs text-stone-500 mt-4 max-w-xs mx-auto leading-relaxed mb-6">
+            <p className="text-xs text-stone-500 mt-4 max-w-xs mx-auto leading-relaxed mb-10 text-center">
               Fully inclusive of transport, private sommelier, all tastings, and the celebrity-chef curated lunch. No hidden fees.
             </p>
+
+            {/* Static Calendar */}
+            <div className="mb-10 bg-white rounded-2xl shadow-sm border border-stone-200/50 p-6 w-full max-w-sm mx-auto">
+              <h3 className="font-serif text-xl text-stone-900 mb-1">Select Available Dates</h3>
+              <p className="text-xs text-stone-500 mb-6">Choose all dates you are available. Click in order of preference.</p>
+
+              <div className="flex items-center justify-between mb-4">
+                <button onClick={prevMonth} className="p-1.5 hover:bg-stone-100 rounded-lg transition-colors">
+                  <ChevronLeft className="w-5 h-5 text-stone-600" />
+                </button>
+                <span className="font-medium text-stone-800">
+                  {monthNames[month]} {year}
+                </span>
+                <button onClick={nextMonth} className="p-1.5 hover:bg-stone-100 rounded-lg transition-colors">
+                  <ChevronRight className="w-5 h-5 text-stone-600" />
+                </button>
+              </div>
+
+              <div className="grid grid-cols-7 gap-1 mb-2 text-center">
+                {['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'].map(d => (
+                  <div key={d} className="text-xs font-semibold text-stone-400 py-1">{d}</div>
+                ))}
+              </div>
+
+              <div className="grid grid-cols-7 gap-1 text-center">
+                {blanks.map(b => (
+                  <div key={`blank-${b}`} className="p-2"></div>
+                ))}
+                {days.map(d => {
+                  const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+                  const isSelected = selectedDates.includes(dateStr);
+                  const isPast = new Date(year, month, d) < new Date(new Date().setHours(0,0,0,0));
+
+                  return (
+                    <button
+                      key={d}
+                      disabled={isPast}
+                      onClick={() => toggleDate(dateStr)}
+                      className={`w-full aspect-square rounded-full flex items-center justify-center text-sm transition-colors relative ${
+                        isPast 
+                          ? 'text-stone-300 cursor-not-allowed'
+                          : isSelected
+                            ? 'bg-terracotta-600 text-white font-medium shadow-md'
+                            : 'text-stone-700 hover:bg-stone-100'
+                      }`}
+                    >
+                      {d}
+                      {isSelected && (
+                        <span className="absolute -top-1 -right-1 bg-stone-900 text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center border-2 border-white shadow-sm">
+                          {selectedDates.indexOf(dateStr) + 1}
+                        </span>
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+              
+              {selectedDates.length > 0 && (
+                <div className="mt-4 pt-3 border-t border-stone-100 text-xs text-stone-500 font-medium">
+                  {selectedDates.length} date(s) selected
+                </div>
+              )}
+            </div>
+
             <button 
               onClick={handleBookNow}
-              className="px-8 py-4 bg-terracotta-600 hover:bg-terracotta-700 text-white font-semibold text-sm tracking-wider uppercase rounded-lg shadow-lg hover:shadow-xl transition-all w-full max-w-xs"
+              className="px-8 py-4 bg-terracotta-600 hover:bg-terracotta-700 text-white font-semibold text-sm tracking-wider uppercase rounded-lg shadow-lg hover:shadow-xl transition-all w-full max-w-sm"
             >
               Book Now
             </button>
           </div>
         </div>
       </div>
-
-      {/* Calendar Modal */}
-      {showCalendar && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/40 backdrop-blur-sm">
-          <div className="bg-white rounded-3xl shadow-2xl max-w-sm w-full p-6 relative animate-in fade-in zoom-in duration-200">
-            <button 
-              onClick={() => setShowCalendar(false)}
-              className="absolute top-4 right-4 p-2 bg-stone-100 rounded-full hover:bg-stone-200 transition-colors"
-            >
-              <X className="w-4 h-4 text-stone-600" />
-            </button>
-            
-            <h3 className="font-serif text-xl text-stone-900 mb-1">Select Available Dates</h3>
-            <p className="text-xs text-stone-500 mb-6">Choose all dates you are available to join an open group.</p>
-
-            <div className="flex items-center justify-between mb-4">
-              <button onClick={prevMonth} className="p-1.5 hover:bg-stone-100 rounded-lg transition-colors">
-                <ChevronLeft className="w-5 h-5 text-stone-600" />
-              </button>
-              <span className="font-medium text-stone-800">
-                {monthNames[month]} {year}
-              </span>
-              <button onClick={nextMonth} className="p-1.5 hover:bg-stone-100 rounded-lg transition-colors">
-                <ChevronRight className="w-5 h-5 text-stone-600" />
-              </button>
-            </div>
-
-            <div className="grid grid-cols-7 gap-1 mb-2 text-center">
-              {['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'].map(d => (
-                <div key={d} className="text-xs font-semibold text-stone-400 py-1">{d}</div>
-              ))}
-            </div>
-
-            <div className="grid grid-cols-7 gap-1 text-center">
-              {blanks.map(b => (
-                <div key={`blank-${b}`} className="p-2"></div>
-              ))}
-              {days.map(d => {
-                const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
-                const isSelected = selectedDates.includes(dateStr);
-                const isPast = new Date(year, month, d) < new Date(new Date().setHours(0,0,0,0));
-
-                return (
-                  <button
-                    key={d}
-                    disabled={isPast}
-                    onClick={() => toggleDate(dateStr)}
-                    className={`w-full aspect-square rounded-full flex items-center justify-center text-sm transition-colors ${
-                      isPast 
-                        ? 'text-stone-300 cursor-not-allowed'
-                        : isSelected
-                          ? 'bg-terracotta-600 text-white font-medium shadow-md'
-                          : 'text-stone-700 hover:bg-stone-100'
-                    }`}
-                  >
-                    {d}
-                  </button>
-                );
-              })}
-            </div>
-
-            <div className="mt-6 pt-4 border-t border-stone-100 flex justify-between items-center">
-              <span className="text-xs text-stone-500">
-                {selectedDates.length} date(s) selected
-              </span>
-              <button 
-                onClick={() => setShowCalendar(false)}
-                className="px-4 py-2 bg-stone-900 text-white rounded-xl text-sm font-medium hover:bg-stone-800 transition-colors"
-              >
-                Done
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 }
