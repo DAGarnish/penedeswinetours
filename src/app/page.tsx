@@ -26,7 +26,7 @@ export default function Home() {
               PENEDÈS <span className="text-terracotta-600">WINE TOURS</span>
             </span>
             <span className="text-[10px] tracking-widest uppercase text-stone-500 font-semibold -mt-1">
-              Sitges Departures
+              Starting and ending in Sitges
             </span>
           </div>
 
@@ -564,7 +564,7 @@ export default function Home() {
           </p>
           <div className="pt-4">
             <a
-              href="#contact"
+              href="#pricing"
               className="inline-block px-8 py-4 bg-terracotta-600 hover:bg-terracotta-700 text-white font-semibold text-sm tracking-wider uppercase rounded-lg shadow-xl hover:shadow-2xl transition-all cursor-pointer"
             >
               Book Your Vineyard Experience
