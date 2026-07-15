@@ -148,11 +148,11 @@ export default function Home() {
               <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider">— Elite Sitges Villa Rentals</p>
             </div>
             <div className="space-y-2 border-b md:border-b-0 md:border-r border-stone-800 pb-6 md:pb-0 md:pr-8 last:border-0">
-              <p className="font-serif text-stone-200 italic">"The afternoon timeline is genius. Guests get to experience world-class vineyards, taste wines, and relax into the evening at El Clastré."</p>
+              <p className="font-serif text-stone-200 italic">"The afternoon timeline is perfect. Guests get to experience world-class vineyards, taste wines, and relax into the evening at El Clastré."</p>
               <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider">— Lead Concierge, Premium Sitges Hotel</p>
             </div>
             <div className="space-y-2 last:border-0">
-              <p className="font-serif text-stone-200 italic">"Every detail—from the Mercedes transport to the celebrity chef culinary pairings—is flawlessly premium. A must-do day trip."</p>
+              <p className="font-serif text-stone-200 italic">"A great trip out from Barcelona on the train to do Sitges and a fantastic vineyard tour, halving the total travel time, and it only takes up one day to do it all."</p>
               <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider">— Barcelona & Sitges Lifestyle Guide</p>
             </div>
           </div>
