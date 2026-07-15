@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import BookingModal from "./components/BookingModal";
 import FaqSection from "./components/FaqSection";
+import PricingSection from "./components/PricingSection";
 import ContactForm from "./components/ContactForm";
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
           <nav className="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide text-stone-600">
             <a href="#itinerary" className="hover:text-terracotta-600 transition-colors">The Itinerary</a>
             <a href="#culinary" className="hover:text-terracotta-600 transition-colors">Culinary Promise</a>
+            <a href="#pricing" className="hover:text-terracotta-600 transition-colors">Pricing</a>
             <a href="#faq" className="hover:text-terracotta-600 transition-colors">Logistics & FAQ</a>
           </nav>
 
@@ -66,7 +68,7 @@ export default function Home() {
                 <span className="text-stone-600 text-sm leading-tight">Fits perfectly into your holiday schedule</span>
               </div>
               <div className="flex items-center space-x-2.5">
-                <span className="text-terracotta-500 font-bold text-lg">VIP</span>
+                <span className="text-terracotta-500 font-bold text-lg">Private</span>
                 <span className="text-stone-600 text-sm leading-tight">Private guide & small groups (2-8)</span>
               </div>
               <div className="flex items-center space-x-2.5">
@@ -366,7 +368,7 @@ export default function Home() {
               </div>
               <h3 className="font-serif text-xl text-stone-900">Curated Garraf Vineyards</h3>
               <p className="text-stone-600 text-sm leading-relaxed">
-                VIP estate access in the Massís del Garraf. Walk the beautiful vines and enjoy curated, guided tastings of organic white, red, and cava directly from the producers.
+                Estate access in the Massís del Garraf. Walk the beautiful vines and enjoy curated, guided tastings of organic white, red, and cava directly from the producers.
               </p>
             </div>
 
@@ -521,6 +523,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Pricing Section */}
+      <PricingSection />
+
       {/* Accordion FAQ Section */}
       <FaqSection />
 
@@ -608,6 +613,7 @@ export default function Home() {
             <ul className="space-y-2.5 text-xs text-stone-400">
               <li><a href="#itinerary" className="hover:text-white transition-colors">The Itinerary</a></li>
               <li><a href="#culinary" className="hover:text-white transition-colors">Culinary Promise</a></li>
+              <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
               <li><a href="#faq" className="hover:text-white transition-colors">Logistics & FAQ</a></li>
             </ul>
           </div>

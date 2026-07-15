@@ -18,7 +18,7 @@ export default function FaqSection() {
     },
     {
       question: "Is wine and food tasting included in the tour price?",
-      answer: "Absolutely. The price covers every detail: premium private transport, your dedicated sommelier host, guided VIP visits to two contrasting boutique estates, all premium wine/Cava tastings, and the custom Xarcuteria lunch board curated by our celebrity chef.",
+      answer: "Absolutely. The price covers every detail: premium private transport, your dedicated sommelier host, guided visits to two contrasting boutique estates, all premium wine/Cava tastings, and the custom Xarcuteria lunch board curated by our celebrity chef.",
     },
     {
       question: "How do you handle dietary requests (like vegan, gluten-free, or vegetarian)?",
@@ -59,7 +59,7 @@ export default function FaqSection() {
             Have Questions?
           </span>
           <h2 className="text-3xl md:text-4xl font-serif text-stone-900 leading-tight">
-            Logistics & Clear Answers
+            FAQs
           </h2>
           <p className="text-stone-600 mt-4 text-sm md:text-base leading-relaxed">
             Everything you need to know about planning your escape from Sitges into the beautiful Penedès wine valley.
