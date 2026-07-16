@@ -374,7 +374,7 @@ export default function Home() {
               </div>
               <h3 className="font-serif text-lg text-stone-900">The Garraf Expedition</h3>
               <p className="text-stone-600 text-sm leading-relaxed">
-                Our driver whisks you away to two contrasting vineyards close by in the Massís del Garraf. Walk the vines and enjoy curated tastings of different grapes, including expressive local reds.
+                Our driver whisks you away to two contrasting rural vineyards minutes away in the Massís del Garraf. Enjoy curated tours and tastings, amongst the vines, including expressive local reds.
               </p>
             </div>
 
@@ -416,7 +416,7 @@ export default function Home() {
               </div>
               <h3 className="font-serif text-lg text-stone-900">Evening at El Clastré</h3>
               <p className="text-stone-600 text-sm leading-relaxed">
-                The formal tour concludes, but the evening is yours. Guests are welcome to stay on and relax into the night at El Clastré, soaking up the vibrant atmosphere.
+                The formal tour concludes, but the evening is yours. Guests are welcome to stay on and relax into the night at El Clastré.
               </p>
             </div>
 
