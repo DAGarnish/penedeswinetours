@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function PricingSection({ onBookNow }: { onBookNow?: (message: string) => void }) {
@@ -8,6 +8,7 @@ export default function PricingSection({ onBookNow }: { onBookNow?: (message: st
   const [addToOpenGroup, setAddToOpenGroup] = useState(false);
   const [selectedDates, setSelectedDates] = useState<{ date: string; hasPreference: boolean }[]>([]);
   const [currentDate, setCurrentDate] = useState(new Date());
+  const lastClickRef = useRef<{ date: string; time: number } | null>(null);
 
   const pricingMap: Record<number, number> = {
     8: 148,
@@ -26,13 +27,28 @@ export default function PricingSection({ onBookNow }: { onBookNow?: (message: st
     setAddToOpenGroup(e.target.checked);
   };
 
-  const toggleDate = (dateStr: string, isShiftClick: boolean) => {
+  const toggleDate = (dateStr: string) => {
+    const now = Date.now();
+    const lastClick = lastClickRef.current;
+    const isDoubleClick = lastClick && lastClick.date === dateStr && (now - lastClick.time) < 400;
+    
+    lastClickRef.current = { date: dateStr, time: now };
+
     setSelectedDates((prev) => {
       const exists = prev.find(d => d.date === dateStr);
+      
+      if (isDoubleClick) {
+        if (exists) {
+          return prev.map(d => d.date === dateStr ? { ...d, hasPreference: false } : d);
+        } else {
+          return [...prev, { date: dateStr, hasPreference: false }];
+        }
+      }
+
       if (exists) {
         return prev.filter(d => d.date !== dateStr);
       } else {
-        return [...prev, { date: dateStr, hasPreference: !isShiftClick }];
+        return [...prev, { date: dateStr, hasPreference: true }];
       }
     });
   };
@@ -151,7 +167,7 @@ export default function PricingSection({ onBookNow }: { onBookNow?: (message: st
             {/* Static Calendar */}
             <div className="mb-10 bg-white rounded-2xl shadow-sm border border-stone-200/50 p-6 w-full max-w-sm mx-auto">
               <h3 className="font-serif text-xl text-stone-900 mb-1">Select Available Dates</h3>
-              <p className="text-xs text-stone-500 mb-6">Choose all dates you are available. Click in order of preference (hold Shift while clicking for no preference).</p>
+              <p className="text-xs text-stone-500 mb-6">Choose all dates you are available. Click/tap in order of preference (double click/tap for no preference).</p>
 
               <div className="flex items-center justify-between mb-4">
                 <button onClick={prevMonth} className="p-1.5 hover:bg-stone-100 rounded-lg transition-colors">
@@ -191,7 +207,7 @@ export default function PricingSection({ onBookNow }: { onBookNow?: (message: st
                     <button
                       key={d}
                       disabled={isPast}
-                      onClick={(e) => toggleDate(dateStr, e.shiftKey)}
+                      onClick={() => toggleDate(dateStr)}
                       className={`w-full aspect-square rounded-full flex items-center justify-center text-sm transition-colors relative ${
                         isPast 
                           ? 'text-stone-300 cursor-not-allowed'

@@ -543,6 +543,31 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Location Map Section */}
+      <section className="py-12 bg-white border-t border-stone-200/40">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="text-terracotta-600 font-serif text-sm tracking-widest uppercase block mb-3">
+              Town Centre Location
+            </span>
+            <h2 className="text-3xl md:text-5xl font-serif text-stone-900 leading-tight">
+              Your Experience Starts & Ends Here
+            </h2>
+          </div>
+          <div className="w-full rounded-2xl overflow-hidden shadow-xl border-4 border-stone-100 bg-stone-200">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000.1604155042437!2d1.809572112735882!3d41.240063504999206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a381fe22a69d21%3A0x94eca3e1d06be14d!2sCeller%20de%20l&#39;Hospital%20de%20Sitges!5e0!3m2!1sen!2ses!4v1784193119467!5m2!1sen!2ses" 
+              width="100%" 
+              height="450" 
+              style={{ border: 0 }} 
+              allowFullScreen={true} 
+              loading="lazy" 
+              referrerPolicy="strict-origin-when-cross-origin"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing Section */}
       <PricingSection onBookNow={handleBookNow} />
 
