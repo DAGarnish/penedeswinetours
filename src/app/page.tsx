@@ -367,6 +367,20 @@ export default function Home() {
             {/* Step 2 */}
             <div className="bg-white p-6 rounded-2xl border border-stone-200/50 shadow-sm space-y-4 hover:shadow-md transition-shadow relative">
               <span className="absolute top-4 right-6 text-4xl font-serif font-bold text-stone-100">02</span>
+              <div className="w-10 h-10 bg-gold-50 text-gold-700 rounded-lg flex items-center justify-center">
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              </div>
+              <h3 className="font-serif text-lg text-stone-900">The Xarcuteria Pairing</h3>
+              <p className="text-stone-600 text-sm leading-relaxed">
+                Settle into our custom-curated culinary highlight—a premium Catalan charcuterie and cheese board, with wine pairings.
+              </p>
+            </div>
+
+            {/* Step 3 */}
+            <div className="bg-white p-6 rounded-2xl border border-stone-200/50 shadow-sm space-y-4 hover:shadow-md transition-shadow relative">
+              <span className="absolute top-4 right-6 text-4xl font-serif font-bold text-stone-100">03</span>
               <div className="w-10 h-10 bg-vineyard-50 text-vineyard-800 rounded-lg flex items-center justify-center">
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-11.314l.707.707m11.314 11.314l.707-.707M12 5a7 7 0 100 14 7 7 0 000-14z" />
@@ -378,9 +392,9 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Step 3 */}
+            {/* Step 4 */}
             <div className="bg-white p-6 rounded-2xl border border-stone-200/50 shadow-sm space-y-4 hover:shadow-md transition-shadow relative">
-              <span className="absolute top-4 right-6 text-4xl font-serif font-bold text-stone-100">03</span>
+              <span className="absolute top-4 right-6 text-4xl font-serif font-bold text-stone-100">04</span>
               <div className="w-10 h-10 bg-stone-100 text-stone-700 rounded-lg flex items-center justify-center">
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
@@ -389,20 +403,6 @@ export default function Home() {
               <h3 className="font-serif text-lg text-stone-900">Return to the Heritage Vines</h3>
               <p className="text-stone-600 text-sm leading-relaxed">
                 Journey back to Celler de l'Hospital de Sitges for an exclusive tour of their beautiful grounds and historic boutique urban vineyard.
-              </p>
-            </div>
-
-            {/* Step 4 */}
-            <div className="bg-white p-6 rounded-2xl border border-stone-200/50 shadow-sm space-y-4 hover:shadow-md transition-shadow relative">
-              <span className="absolute top-4 right-6 text-4xl font-serif font-bold text-stone-100">04</span>
-              <div className="w-10 h-10 bg-gold-50 text-gold-700 rounded-lg flex items-center justify-center">
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                </svg>
-              </div>
-              <h3 className="font-serif text-lg text-stone-900">The Xarcuteria Pairing</h3>
-              <p className="text-stone-600 text-sm leading-relaxed">
-                Settle into our custom-curated culinary highlight—a premium Catalan charcuterie and cheese board, with wine pairings.
               </p>
             </div>
 
