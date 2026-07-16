@@ -551,7 +551,7 @@ export default function Home() {
               Town Centre Location
             </span>
             <h2 className="text-3xl md:text-5xl font-serif text-stone-900 leading-tight">
-              Your Experience Starts & Ends Here
+              Meet at our historic Sitges winery
             </h2>
           </div>
           <div className="w-full rounded-2xl overflow-hidden shadow-xl border-4 border-stone-100 bg-stone-200">
