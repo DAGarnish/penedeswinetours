@@ -140,20 +140,17 @@ export default function Home() {
       <section className="bg-stone-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-6">
           <p className="text-center text-xs uppercase tracking-widest text-gold-400 font-bold mb-8">
-            As Recommended by Luxury Concierges in Sitges
+            Recommended by Luxury Concierges
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
             <div className="space-y-2 border-b md:border-b-0 md:border-r border-stone-800 pb-6 md:pb-0 md:pr-8 last:border-0">
               <p className="font-serif text-stone-200 italic">"Our guests at the villa expect the absolute best. Penedès Wine Tours delivers a seamless experience that consistently wows them from town to the vines."</p>
-              <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider">— Elite Sitges Villa Rentals</p>
             </div>
             <div className="space-y-2 border-b md:border-b-0 md:border-r border-stone-800 pb-6 md:pb-0 md:pr-8 last:border-0">
               <p className="font-serif text-stone-200 italic">"The afternoon timeline is perfect. Guests get to experience world-class vineyards, taste wines, and relax into the evening at El Clastré."</p>
-              <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider">— Lead Concierge, Premium Sitges Hotel</p>
             </div>
             <div className="space-y-2 last:border-0">
               <p className="font-serif text-stone-200 italic">"A great trip out from Barcelona on the train to do Sitges and a fantastic vineyard tour, halving the total travel time, and it only takes up one day to do it all."</p>
-              <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider">— Barcelona & Sitges Lifestyle Guide</p>
             </div>
           </div>
         </div>
