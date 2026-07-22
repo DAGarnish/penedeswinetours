@@ -646,7 +646,7 @@ export default function Home() {
               PENEDÈS <span className="text-terracotta-500">WINE TOURS</span>
             </p>
             <p className="text-xs leading-relaxed text-stone-400">
-              Curating exclusive, half-day tours from Sitges into the heart of the Massís del Garraf wine country. Premium local hosts, Mercedes-class pickup, and A-list chef dining.
+              Curating unique, afternoon tours from Sitges into the heart of the Massís del Garraf, Penedès wine country.
             </p>
           </div>
 
