@@ -195,7 +195,11 @@ export default function PricingSection({ onBookNow }: { onBookNow?: (message: st
                   const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
                   const selectionItem = selectedDates.find(item => item.date === dateStr);
                   const isSelected = !!selectionItem;
-                  const isPast = new Date(year, month, d) < new Date(new Date().setHours(0,0,0,0));
+                  const currentDateObj = new Date(year, month, d);
+                  const isPast = currentDateObj < new Date(new Date().setHours(0,0,0,0));
+                  const dayOfWeek = currentDateObj.getDay();
+                  const isAvailableDay = dayOfWeek === 3 || dayOfWeek === 6;
+                  const isDisabled = isPast || !isAvailableDay;
                   
                   let prefNumber = null;
                   if (selectionItem?.hasPreference) {
@@ -206,10 +210,10 @@ export default function PricingSection({ onBookNow }: { onBookNow?: (message: st
                   return (
                     <button
                       key={d}
-                      disabled={isPast}
+                      disabled={isDisabled}
                       onClick={() => toggleDate(dateStr)}
                       className={`w-full aspect-square rounded-full flex items-center justify-center text-sm transition-colors relative ${
-                        isPast 
+                        isDisabled 
                           ? 'text-stone-300 cursor-not-allowed'
                           : isSelected
                             ? 'bg-terracotta-600 text-white font-medium shadow-md'
